@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TRYOUTS</title>
+    <description>Official Tryouts apps webpage on GitHub.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 15 Jan 2017 18:30:06 +0100</pubDate>
+    <lastBuildDate>Sun, 15 Jan 2017 18:30:06 +0100</lastBuildDate>
+    <generator>Jekyll v3.3.1</generator>
+    
+      <item>
+        <title>Project 1</title>
+        <description>&lt;b&gt;SudokuPlus&lt;/b&gt; is a free Android game for handheld devices. It comes with a pleasant UI, save/load mechanics and hinting system. There are two color schemes to chose from. Game has english and polish version. &lt;a href=&quot;http:google.pl&quot;&gt;Check Google Play for more information and download.&lt;/a&gt;</description>
+        <pubDate>Sun, 15 Jan 2017 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/game/2017/01/15/project-1/</link>
+        <guid isPermaLink="true">http://localhost:4000/game/2017/01/15/project-1/</guid>
+        
+        
+        <category>Game</category>
+        
+      </item>
+    
+      <item>
+        <title>Project 2</title>
+        <description>&lt;b&gt;calmNow&lt;/b&gt; app is under development at the moment. The goal of this app is to provide user with positive feedback at anytime necessary. Here are some examples. If you're having a panic attack, open the app and follow instruction to calm yourself. If you're just woke up and don't feel like getting up, open the app and identify yourself with the positive content that's inside. I think that this app will be different than usual how-to-meditate-and-think-positively kind of apps. As always, the app itself will be free.</description>
+        <pubDate>Mon, 02 Jan 2017 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/productive/self-development%20app/2017/01/02/project-2/</link>
+        <guid isPermaLink="true">http://localhost:4000/productive/self-development%20app/2017/01/02/project-2/</guid>
+        
+        
+        <category>Productive/self-development app</category>
+        
+      </item>
+    
+      <item>
+        <title>Project 3</title>
+        <description>If you have an app idea, please, send me an e-mail! :)</description>
+        <pubDate>Sun, 01 Jan 2017 00:00:00 +0100</pubDate>
+        <link>http://localhost:4000/2017/01/01/project-3/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/01/project-3/</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

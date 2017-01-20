@@ -1,2 +1,72 @@
-markdown: redcarpet
-exclude: ['README.md']
+# Site settings
+title: TRYOUTS
+email: tryoutsapps@gmail.com
+url: http://miwy.github.com
+description: "Official Tryouts apps webpage on GitHub."
+skills: "– Android Apps made for fun –"
+meta_author: Wyrwa Michał
+
+# Google webmaster tools
+google_verify:
+
+# https://ssl.bing.com/webmaster/configure/verify/ownership Option 2 content= goes here
+bing_verify:
+
+# Contact form:
+# - static : pass through formspree.io to validate email sending
+# - disqus : replace contact form by disqus thread
+# - comment the line below if you want to stick with the default PHP contact form
+contact: static
+
+# If you use disqus you need disqus shortname
+# https://help.disqus.com/customer/portal/articles/466208
+disqus_shortname: myshortname
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: 07889B #80B3FF
+  primary-rgb: "7,136,155" #"128,179,255"
+  # primary: 07889B #80B3FF
+  # primary-rgb: "7,136,155" #"128,179,255"
+  secondary: E37222 #FD6E8A
+  secondary-dark: EEAA78 #FD6E8A
+  secondary-light: EEAA78
+  primary-light: 66B9BF
+  primary-light-rgb: "102,185,191"
+  secondary-rgb: "227,114,34"
+  background: f7f7f7
+  # secondary-dark: E37222 #A2122F
+
+# Footer settings
+footer:
+  copyright: MW
+  location:
+  social: Around the Web
+  credits: Bio
+
+# Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
+social:
+  # - title: twitter
+  #   url: http://twitter.com/jekyllrb
+  # - title: facebook
+  #   url:
+  # - title: stack-overflowl
+  #   url: http://stackoverflow.com/questions/tagged/jekyll
+  # - title: bitbucket
+  #   url: http://bitbucket.org/jekyll
+  - title: github
+    url: http://github.com/miwy
+
+# Postal address (add as many lines as necessary)
+address:
+  - line:
+  - line:
+  - line:
+  - line:
+
+# Credits content
+credits: 'Hi! Michael here. Couple of months ago I decided to learn how to code. I also started a blog on this subject: <a href="http://github.com/miwy/blog">From Grad School to Coding</>.'
+
+# Build settings
+markdown: kramdown
+permalink: pretty
