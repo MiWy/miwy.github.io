@@ -7,5 +7,5 @@ alt: image-alt
 project-date: January 2017
 client: Android
 category: Game
-description: <b>SudokuPlus</b> is a free Android game for handheld devices. It comes with a pleasant UI, save/load mechanics and hinting system. There are two color schemes to chose from. Game has english and polish version. <a href="http:google.pl">Check Google Play for more information and download.</a>
+description: <b>SudokuPlus</b> is a free Android game for handheld devices. It comes with a pleasant UI, save/load mechanics and hinting system. There are two color schemes to chose from. Game has english and polish version. <a href="https://play.google.com/store/apps/details?id=com.tryouts.sudokuplus">Check Google Play for more information and download.</a>
 ---
