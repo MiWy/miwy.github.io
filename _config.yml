@@ -65,7 +65,7 @@ address:
   - line:
 
 # Credits content
-credits: 'Hi! Michael here. Couple of months ago I decided to learn how to code. I also started a blog on this subject: <a href="http://github.com/miwy/blog">From Grad School to Coding</>.'
+credits: 'Hi! Michael here. Couple of months ago I decided to learn how to code. I also started a blog on this subject: <a href="https://doksaprosta.wordpress.com">doksaprosta</>.'
 
 # Build settings
 markdown: kramdown
