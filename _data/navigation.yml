@@ -1,0 +1,13 @@
+main:
+  - title: "Posts"
+    url: /posts/
+  - title: "Papers"
+    url: /papers/
+  - title: "Teaching"
+    url: /teaching/
+  - title: "CV"
+    url: /cv/
+  - title: "About"
+    url: /about/
+  - title: "Tags"
+    url: /tags/
