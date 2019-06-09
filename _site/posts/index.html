@@ -1,6 +1,6 @@
 <!doctype html>
 <!--
-  Minimal Mistakes Jekyll Theme 4.16.3 by Michael Rose
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
   Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
   Free for personal and commercial use under the MIT license
   https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
@@ -50,7 +50,7 @@
 
 
 <link href="/feed.xml"
-    type="application/atom+xml" rel="alternate" title="Michał Wyrwa Feed">
+  type="application/atom+xml" rel="alternate" title="Michał Wyrwa Feed">
 
 <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
 
@@ -59,7 +59,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
 </script>
 
 <!-- For all browsers -->
@@ -83,10 +83,12 @@
 
     <!-- start custom head snippets -->
 
+<link
+    href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans:400,400i,700,700i&display=swap&subset=latin-ext"
+    rel="stylesheet">
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 
 <!-- end custom head snippets -->
-
   </head>
 
   <body class="layout--posts">
@@ -104,15 +106,13 @@
         
         <a class="site-title" href="/">Michał Wyrwa</a>
         <ul class="visible-links"><li class="masthead__menu-item">
-              <a href="/posts/" >Posts</a>
+              <a href="/papers/" >Papers & Talks</a>
             </li><li class="masthead__menu-item">
-              <a href="/papers/" >Papers</a>
-            </li><li class="masthead__menu-item">
-              <a href="/teaching/" >Teaching</a>
-            </li><li class="masthead__menu-item">
-              <a href="/cv/" >CV</a>
+              <a href="/teaching/" >Teaching Materials</a>
             </li><li class="masthead__menu-item">
               <a href="/about/" >About</a>
+            </li><li class="masthead__menu-item">
+              <a href="/posts/" >Posts</a>
             </li><li class="masthead__menu-item">
               <a href="/tags/" >Tags</a>
             </li></ul>
@@ -139,32 +139,6 @@
       
 
 
-  
-    
-
-
-
-<nav class="breadcrumbs">
-  <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-    
-    
-    
-      
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-          <a href="http://localhost:4000/" itemprop="item"><span itemprop="name">Home</span></a>
-          <meta itemprop="position" content="1" />
-        </li>
-        <span class="sep">/</span>
-      
-      
-        <li class="current">Posts by Year</li>
-      
-    
-  </ol>
-</nav>
-
-  
-
 
 <div id="main" role="main">
   
@@ -182,7 +156,7 @@
     
     
       <p class="author__bio" itemprop="description">
-        Office hours: Mondays 11-14, Tuesdays 11-12 (110AB)
+        <h4>Office hours:</h4> <p></br> Mondays 11-14 </br> Tuesdays 11-12</p>
       </p>
     
   </div>
@@ -300,8 +274,14 @@
     </li>
   
     <li>
-      <a href="#2010">
-        <strong>2010</strong> <span class="taxonomy__count">6</span>
+      <a href="#2018">
+        <strong>2018</strong> <span class="taxonomy__count">2</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2017">
+        <strong>2017</strong> <span class="taxonomy__count">3</span>
       </a>
     </li>
   
@@ -322,12 +302,14 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/welcome-to-jekyll/" rel="permalink">Welcome to Jekyll!
+        <a href="/blog/PandocScripts/" rel="permalink">Writing workflow: Pandoc scripts
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different wa...</p>
+    <p class="archive__item-excerpt" itemprop="description">tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it
+
+</p>
   </article>
 </div>
 
@@ -336,8 +318,8 @@
     <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
   </section>
 
-  <section id="2010" class="taxonomy__section">
-    <h2 class="archive__subtitle">2010</h2>
+  <section id="2018" class="taxonomy__section">
+    <h2 class="archive__subtitle">2018</h2>
     <div class="entries-list">
       
         
@@ -349,12 +331,12 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="https://github.com">Post: Link
-</a> <a href="/blog/post-link/" rel="permalink"><i class="fas fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
+        <a href="/blog/Viewmodel/" rel="permalink">[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit
+</a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">This theme supports link posts, made famous by John Gruber. To use, just add link: http://url-you-want-linked to the post’s YAML front matter and you’re done.
+    <p class="archive__item-excerpt" itemprop="description">[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 
 </p>
   </article>
@@ -370,17 +352,41 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/post-quote/" rel="permalink">Post: Quote
+        <a href="/blog/AngularJS-Spotibar/" rel="permalink">[OLD] SpotiBar: ANGULARJS
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">
-  Only one thing is impossible for God: To find any sense in any copyright law on the planet.
+    <p class="archive__item-excerpt" itemprop="description">[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to Top &uarr;</a>
+  </section>
+
+  <section id="2017" class="taxonomy__section">
+    <h2 class="archive__subtitle">2017</h2>
+    <div class="entries-list">
+      
+        
 
 
 
-  Mark Twain
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/blog/SpotiBar/" rel="permalink">[OLD] SpotiBar: Spotify + Foobar
+</a>
+      
+    </h2>
+    
+    <p class="archive__item-excerpt" itemprop="description">[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 
 </p>
   </article>
@@ -396,12 +402,12 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/post-notice/" rel="permalink">Post: Notice
+        <a href="/blog/EnumSql/" rel="permalink">[OLD] Java 101: Enum + Servlets
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">A notice displays information that explains nearby content. Often used to call attention to a particular detail.
+    <p class="archive__item-excerpt" itemprop="description">[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 
 </p>
   </article>
@@ -417,52 +423,12 @@
     
     <h2 class="archive__item-title" itemprop="headline">
       
-        <a href="/blog/post-chat/" rel="permalink">Post: Chat
+        <a href="/blog/android_courier_firebase/" rel="permalink">[OLD] Courier App for Android
 </a>
       
     </h2>
     
-    <p class="archive__item-excerpt" itemprop="description">Abbott: Strange as it may seem, they give ball players nowadays very peculiar names.
-
-</p>
-  </article>
-</div>
-
-      
-        
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blog/post-standard/" rel="permalink">Post: Standard
-</a>
-      
-    </h2>
-    
-    <p class="archive__item-excerpt" itemprop="description">All children, except one, grow up. They soon know that they will grow up, and the way Wendy knew was this. One day when she was two years old she was playing...</p>
-  </article>
-</div>
-
-      
-        
-
-
-
-<div class="list__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title" itemprop="headline">
-      
-        <a href="/blog/post-modified/" rel="permalink">Post: Modified Date
-</a>
-      
-    </h2>
-    
-    <p class="archive__item-excerpt" itemprop="description">This post has been updated and should show a modified date if used in a layout.
+    <p class="archive__item-excerpt" itemprop="description">[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 
 </p>
   </article>
@@ -508,7 +474,7 @@
 
     
   <script src="/assets/js/main.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
 
 
 

@@ -1,0 +1,925 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.16.4 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit - Michał Wyrwa</title>
+<meta name="description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Michał Wyrwa">
+<meta property="og:title" content="[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit">
+<meta property="og:url" content="http://localhost:4000/blog/Viewmodel/">
+
+
+  <meta property="og:description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2018-04-29T17:02:00+02:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/Viewmodel/">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml"
+  type="application/atom+xml" rel="alternate" title="Michał Wyrwa Feed">
+
+<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE ]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<link
+    href="https://fonts.googleapis.com/css?family=Fjalla+One|Noto+Sans:400,400i,700,700i&display=swap&subset=latin-ext"
+    rel="stylesheet">
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">Michał Wyrwa</a>
+        <ul class="visible-links">
+<li class="masthead__menu-item">
+              <a href="/papers/">Papers &amp; Talks</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/teaching/">Teaching Materials</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/about/">About</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/posts/">Posts</a>
+            </li>
+<li class="masthead__menu-item">
+              <a href="/tags/">Tags</a>
+            </li>
+</ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <svg class="icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 15.99 16">
+            <path d="M15.5,13.12L13.19,10.8a1.69,1.69,0,0,0-1.28-.55l-0.06-.06A6.5,6.5,0,0,0,5.77,0,6.5,6.5,0,0,0,2.46,11.59a6.47,6.47,0,0,0,7.74.26l0.05,0.05a1.65,1.65,0,0,0,.5,1.24l2.38,2.38A1.68,1.68,0,0,0,15.5,13.12ZM6.4,2A4.41,4.41,0,1,1,2,6.4,4.43,4.43,0,0,1,6.4,2Z" transform="translate(-.01)"></path>
+          </svg>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name"></h3>
+    
+    
+      <p class="author__bio" itemprop="description">
+        </p>
+<h4>Office hours:</h4> <p> Mondays 11-14  Tuesdays 11-12</p>
+      
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+
+      
+        
+          
+            <li><a href="mailto:michal.wyrwa@amu.edu.pl" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+          
+        
+          
+            <li><a href="https://michalwyrwa.youcanbook.me" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Book me</a></li>
+          
+        
+          
+            <li><a href="https://orcid.org/0000-0003-4227-1629" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-link" aria-hidden="true"></i> ORCID</a></li>
+          
+        
+          
+            <li><a href="https://github.com/MiWy" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+          
+        
+          
+            <li><a href="https://www.researchgate.net/profile/Michal_Wyrwa" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i> ResearchGate</a></li>
+          
+        
+          
+            <li><a href="https://scholar.google.com/citations?user=eJtcrykAAAAJ&amp;hl=pl&amp;authuser=1&amp;oi=sra" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-google" aria-hidden="true"></i> Scholar</a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit">
+    <meta itemprop="description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]">
+    <meta itemprop="datePublished" content="April 29, 2018">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+          <aside class="sidebar__right ">
+            <nav class="toc">
+              <header><h4 class="nav__title">
+<i class="fas fa-file-alt"></i> Table of Contents</h4></header>
+              <ul class="toc__menu">
+  <li><a href="#komponenty-architektury-androida">Komponenty architektury Androida</a></li>
+  <li>
+<a href="#aplikacja-whereisspacestation">Aplikacja WhereIsSpaceStation</a>
+    <ul>
+      <li><a href="#ustawienia-projektu">Ustawienia projektu</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#konfiguracja-retrofit">Konfiguracja Retrofit</a></li>
+      <li><a href="#repository">Repository</a></li>
+      <li><a href="#viewmodel">ViewModel</a></li>
+      <li><a href="#ui-mainactivity">UI, MainActivity</a></li>
+      <li><a href="#finisz">Finisz</a></li>
+    </ul>
+  </li>
+</ul>
+            </nav>
+          </aside>
+        
+        <p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
+
+<p>W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.</p>
+
+<p>Aplikacja wyglądać będzie tak:</p>
+
+<p><img src="/assets/images/oldblog/issfinishedappl.png" alt="image-center" class="align-center"></p>
+
+<h2 id="komponenty-architektury-androida">Komponenty architektury Androida</h2>
+
+<p><a href="https://developer.android.com/topic/libraries/architecture/">Architecture Components</a> to biblioteki dla Androida, zaprezentowane przez Google na <a href="https://www.youtube.com/watch?v=FrteWKKVyzI">I/O ‘17</a>. Mają one ułatwić proces projektowania architektury aplikacji. Dotąd zespół Androida nie rekomendował żadnego konkretnego wzorca architektury. A tych popularnych trochę jest, by wymienić same <a href="https://medium.com/@vicky7230/android-architecture-patterns-mv-c-p-vm-4594574eeaa1"><em>model-view-*</em></a>.</p>
+
+<p>Dodatkowe komponenty i rekomendowany przepływ danych można zobrazować tak:</p>
+
+<p><img src="/assets/images/oldblog/AndroidComponentsFlowChart1.png" alt="image-center" class="align-center"></p>
+
+<p>Warstwa UI oddzielona jest od tej częsci kodu, która jest odpowiedzialna za zdobywanie i przygotowywanie danych przez <code class="highlighter-rouge">ViewModel</code>. Obiekty tej klasy nie są niszczone wskutek zmian konfiguracyjnych aplikacji (np. zmiany orientacji ekranu), są <em>lifecycle-aware</em>, więc nie ma już potrzeby pakowania multum danych w <code class="highlighter-rouge">onSaveInstanceState()</code>. ViewModel przetrwa, jeśli w Activity, w której był przywołany, zostanie użyte <code class="highlighter-rouge">onDestroy()</code>, o ile tylko nie będzie to się wiązało z wywołaniem metody <code class="highlighter-rouge">finish()</code> (więcej <a href="https://code.tutsplus.com/tutorials/android-architecture-components-lifecycle-and-livemodel--cms-29275">tutaj</a>).</p>
+
+<p>Sam <code class="highlighter-rouge">ViewModel</code> również nie ma być odpowiedzialny za operacje na bazie danych albo zewnętrznym API, dostaje takie gotowe dane z <code class="highlighter-rouge">Repository</code>. Sama klasa Repository nie wchodzi w skład bibliotek Architecture Components. Obiekty należące do tej klasy mają pośredniczyć w wymianie danych pomiędzy źródłem danych (API/SQLite/itd.) a ViewModelem.</p>
+
+<p>Biblioteka <code class="highlighter-rouge">Room</code> to warstwa abstrakcji nad SQLite, ułatwiająca (= mniej kodu) dostęp i manipulację danymi z bazy danych. Od strony RESTfulowych usług, pobierania danych spoza naszej aplikacji przy pomocy jakiegoś API, Android nie dostarcza gotowej biblioteki. W <a href="https://developer.android.com/topic/libraries/architecture/guide">dokumentacji</a> natomiast korzysta z <a href="http://square.github.io/retrofit/"><code class="highlighter-rouge">Retrofit</code></a>, stąd gwiazdka na diagramie :).</p>
+
+<p>Pozostaje kwestia <a href="https://developer.android.com/topic/libraries/architecture/livedata"><code class="highlighter-rouge">LiveData</code></a>. Jest to <em>data holder</em>, który może być obserwowany.  Innymi słowy, jeśli nasze dane zostaną przekazane przez ViewModel do warstwy UI jako LiveData, to obserwowanie stanu danych w LiveData wystarczy, by przy zmianie w danych zmianie też uległa wyświetlana dla użytkownika treść na ekranie.</p>
+
+<h2 id="aplikacja-whereisspacestation">Aplikacja WhereIsSpaceStation</h2>
+
+<p>W tym wpisie zajmiemy się “prawą stroną” diagramy. Nie będziemy niczego zapisywać w bazie danych, wykorzystamy LiveData, ViewModel, Repository i Retrofit by wyświetlić na ekranie aktualną pozycję ISS. Po naciśnięciu przycisku informacja na ekranie będzie aktualizowana. W przyszłości dodamy też bazę danych.</p>
+
+<p>Skorzystamy z:</p>
+
+<ul>
+  <li>
+<a href="https://developer.android.com/studio/">Android Studio</a> (na dzień pisania wpisu jest to wersja 3.1.1)</li>
+  <li><a href="http://open-notify.org/Open-Notify-API/">OpenNotify API</a></li>
+  <li><a href="http://square.github.io/retrofit/">Retrofit</a></li>
+  <li>Biblioteki <a href="https://developer.android.com/topic/libraries/architecture/">Architecture Components</a>
+</li>
+</ul>
+
+<h3 id="ustawienia-projektu">Ustawienia projektu</h3>
+
+<p>Tworzymy nowy projekt w Android Studio:</p>
+
+<p><img src="/assets/images/oldblog/Screen-Shot-2018-04-29-at-10.47.55.png" alt="image-center" class="align-center"></p>
+
+<p><img src="/assets/images/oldblog/Screen-Shot-2018-04-29-at-10.48.07.png" alt="image-center" class="align-center"></p>
+
+<p>Resztę ustawień pozostawiamy domyślne. Kreator powinien nam stworzyć nowy projekt, z jedną Activity (wedle templatki EmptyActivity).</p>
+
+<p>Nasza aplikacja będzie korzystać z połączenia z internetem, więc w <code class="highlighter-rouge">AndroidManifest.xml</code> musimy dodać:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;uses-permission</span> <span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="nt">/&gt;</span>
+</code></pre></div></div>
+
+<p>Architecture Components na dzień dzisiejszy trzeba ręcznie dodać do projektu. W <code class="highlighter-rouge">build.gradle</code> projektu sprawdzamy, czy wśród repozytoriów znajduje się google():</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">repositories</span> <span class="o">{</span>
+           <span class="n">google</span><span class="o">()</span>
+           <span class="n">jcenter</span><span class="o">()</span>
+       <span class="o">}</span>
+</code></pre></div></div>
+
+<p>A w <code class="highlighter-rouge">build.gradle</code> na poziomie modułu aplikacji dodajemy potrzebne biblioteki. Aktualne wersje bibliotek znaleźć można <a href="https://developer.android.com/topic/libraries/architecture/adding-components">tutaj</a>:</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="k">dependencies</span> <span class="o">{</span>
+        <span class="n">implementation</span> <span class="nf">fileTree</span><span class="o">(</span><span class="nl">dir:</span> <span class="s1">'libs'</span><span class="o">,</span> <span class="nl">include:</span> <span class="o">[</span><span class="s1">'*.jar'</span><span class="o">])</span>
+        <span class="n">implementation</span> <span class="s1">'com.android.support:appcompat-v7:27.1.0'</span>
+        <span class="n">implementation</span> <span class="s1">'com.android.support.constraint:constraint-layout:1.1.0'</span>
+        <span class="n">testImplementation</span> <span class="s1">'junit:junit:4.12'</span>
+        <span class="n">androidTestImplementation</span> <span class="s1">'com.android.support.test:runner:1.0.1'</span>
+        <span class="n">androidTestImplementation</span> <span class="s1">'com.android.support.test.espresso:espresso-core:3.0.1'</span>
+    
+        <span class="c1">// Javax annotation</span>
+        <span class="n">implementation</span> <span class="s1">'org.glassfish:javax.annotation:10.0-b28'</span>
+    
+        <span class="c1">// Retrofit</span>
+        <span class="n">implementation</span> <span class="s1">'com.squareup.retrofit2:retrofit:2.4.0'</span>
+        <span class="n">implementation</span> <span class="s1">'com.squareup.retrofit2:converter-gson:2.4.0'</span>
+    
+        <span class="c1">// ViewModel and LiveData</span>
+        <span class="n">implementation</span> <span class="s2">"android.arch.lifecycle:extensions:1.1.1"</span>
+        <span class="c1">// alternatively, just ViewModel</span>
+        <span class="n">implementation</span> <span class="s2">"android.arch.lifecycle:viewmodel:1.1.1"</span>
+        <span class="c1">// alternatively, just LiveData</span>
+        <span class="n">implementation</span> <span class="s2">"android.arch.lifecycle:livedata:1.1.1"</span>
+    
+        <span class="n">annotationProcessor</span> <span class="s2">"android.arch.lifecycle:compiler:1.1.1"</span>
+    
+        <span class="c1">// Room (use 1.1.0-beta3 for latest beta)</span>
+        <span class="n">implementation</span> <span class="s2">"android.arch.persistence.room:runtime:1.0.0"</span>
+        <span class="n">annotationProcessor</span> <span class="s2">"android.arch.persistence.room:compiler:1.0.0"</span>
+    
+        <span class="c1">// Paging</span>
+        <span class="n">implementation</span> <span class="s2">"android.arch.paging:runtime:1.0.0-rc1"</span>
+    
+        <span class="c1">// Test helpers for LiveData</span>
+        <span class="n">testImplementation</span> <span class="s2">"android.arch.core:core-testing:1.1.1"</span>
+    
+        <span class="c1">// Test helpers for Room</span>
+        <span class="n">testImplementation</span> <span class="s2">"android.arch.persistence.room:testing:1.0.0"</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Synchronizujemy i budujemy projekt, sprawdzając, czy nie ma błędów kompilacji :).</p>
+
+<h3 id="resources">Resources</h3>
+
+<p>Nasza aplikacja będzie bardzo prosta, więc możemy od razu ustawić potrzebne pliki w katalogu <code class="highlighter-rouge">res</code>.</p>
+
+<p>W strings.xml dodajemy kilka Stringów:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nt">&lt;resources&gt;</span>
+        <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"app_name"</span><span class="nt">&gt;</span>WhereIsSpaceStation<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"header_note"</span><span class="nt">&gt;</span>Where is the International Space Station now?<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"button_text"</span><span class="nt">&gt;</span>Check!<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"response_empty"</span><span class="nt">&gt;</span>It seems we did not receive any data this time.<span class="nt">&lt;/string&gt;</span>
+        <span class="nt">&lt;string</span> <span class="na">name=</span><span class="s">"response_failure"</span><span class="nt">&gt;</span>It seems you have some internet connection problems.<span class="nt">&lt;/string&gt;</span>
+    <span class="nt">&lt;/resources&gt;</span>
+</code></pre></div></div>
+
+<p>A w pliku XML naszego Activity (MainActivity.xml):</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="cp">&lt;?xml version="1.0" encoding="utf-8"?&gt;</span>
+    <span class="nt">&lt;android.support.constraint.ConstraintLayout</span> <span class="na">xmlns:android=</span><span class="s">"http://schemas.android.com/apk/res/android"</span>
+        <span class="na">xmlns:app=</span><span class="s">"http://schemas.android.com/apk/res-auto"</span>
+        <span class="na">xmlns:tools=</span><span class="s">"http://schemas.android.com/tools"</span>
+        <span class="na">android:layout_width=</span><span class="s">"match_parent"</span>
+        <span class="na">android:layout_height=</span><span class="s">"match_parent"</span>
+        <span class="na">tools:context=</span><span class="s">".MainActivity"</span><span class="nt">&gt;</span>
+    
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/header"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"@string/header_note"</span>
+            <span class="na">android:textSize=</span><span class="s">"16sp"</span>
+            <span class="na">app:layout_constraintBottom_toTopOf=</span><span class="s">"@id/coordinates"</span>
+            <span class="na">app:layout_constraintLeft_toLeftOf=</span><span class="s">"parent"</span>
+            <span class="na">app:layout_constraintRight_toRightOf=</span><span class="s">"parent"</span>
+            <span class="na">app:layout_constraintTop_toTopOf=</span><span class="s">"parent"</span> <span class="nt">/&gt;</span>
+    
+        <span class="nt">&lt;TextView</span>
+            <span class="na">android:id=</span><span class="s">"@+id/coordinates"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">""</span>
+            <span class="na">app:layout_constraintBottom_toTopOf=</span><span class="s">"@id/checkButton"</span>
+            <span class="na">app:layout_constraintLeft_toLeftOf=</span><span class="s">"parent"</span>
+            <span class="na">app:layout_constraintRight_toRightOf=</span><span class="s">"parent"</span>
+            <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">"@id/header"</span> <span class="nt">/&gt;</span>
+    
+    
+        <span class="nt">&lt;Button</span>
+            <span class="na">android:id=</span><span class="s">"@+id/checkButton"</span>
+            <span class="na">android:layout_width=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:layout_height=</span><span class="s">"wrap_content"</span>
+            <span class="na">android:text=</span><span class="s">"@string/button_text"</span>
+            <span class="na">app:layout_constraintTop_toBottomOf=</span><span class="s">"@id/coordinates"</span>
+            <span class="na">app:layout_constraintBottom_toBottomOf=</span><span class="s">"parent"</span>
+            <span class="na">app:layout_constraintLeft_toLeftOf=</span><span class="s">"parent"</span>
+            <span class="na">app:layout_constraintRight_toRightOf=</span><span class="s">"parent"</span><span class="nt">/&gt;</span>
+    
+    
+    <span class="nt">&lt;/android.support.constraint.ConstraintLayout&gt;</span>
+</code></pre></div></div>
+
+<p>Na nasze UI składać się będzie (oprócz paska aplikacji): TextView z na sztywno ustawionym tekstem (“Where is the ISS now?”), TextView, w którym wyświetlać będziemy lokalizację ISS oraz Button, którego naciśnięcie zaktualizuje dane o lokalizacji.</p>
+
+<h3 id="konfiguracja-retrofit">Konfiguracja Retrofit</h3>
+
+<p>Ustawienie Retrofit jest bardzo proste. Potrzebujemy adresu, pod który wysyłane będzie żądanie, POJO, w których Retrofit będzie zapisywać dane zwrotne i jednego interfejsu.</p>
+
+<p>OpenNotify, API z którego skorzystamy, jest bardzo przyjemne, bo nie wymaga żadnej autoryzacji. Adres, pod którym znajdują się potrzebne nam dane o lokalizacji ISS jest taki: <a href="http://api.open-notify.org/iss-now.json"><code class="highlighter-rouge">http://api.open-notify.org/iss-now.json</code></a>. Jak widać, dane zwrotne są w postaci JSON, będziemy musieli poinformować o tym Retrofit przy konfiguracji.</p>
+
+<p>POJO wraz z anotacjami możemy wykreować automatycznie. W Android Studio istnieje możliwość używania pluginów. Klikamy w Preferences-&gt;Plugins, wpisujemy <code class="highlighter-rouge">Json2Pojo</code>, instalujemy i restartujemy IDE.</p>
+
+<p><img src="/assets/images/oldblog/Screen-Shot-2018-04-29-at-11.09.35.png" alt="image-center" class="align-center"></p>
+
+<p>Stworzymy sobie osobną paczkę do POJO. W widoku struktury projektu z lewej strony programu klikamy na główną paczkę naszego projektu prawym przyciskiem myszy, następnie New-&gt;Package. Nazywamy ją “<code class="highlighter-rouge">pojos</code>”. Klikamy prawym na pojos, New-&gt;Create POJOs from JSON. W Root Class Name wpisujemy nazwę naszego POJO: <code class="highlighter-rouge">IssLocationJSON</code>, a w okienku przeklejamy JSON z <a href="http://api.open-notify.org/iss-now.json">OpenNotify</a>. Klikamy OK.</p>
+
+<p>Plugin powinien wygenerować dwie klasy: <code class="highlighter-rouge">IssLocationJSON</code> oraz <code class="highlighter-rouge">IssPosition</code>. Dla porównania, kod dla IssLocationJSON:</p>
+
+<pre><code class="language-Java">    @Generated("net.hexar.json2pojo")
+    @SuppressWarnings("unused")
+    public class IssLocationJSON {
+    
+        @SerializedName("iss_position")
+        private IssPosition mIssPosition;
+        @SerializedName("message")
+        private String mMessage;
+        @SerializedName("timestamp")
+        private Long mTimestamp;
+    
+        public IssPosition getIssPosition() {
+            return mIssPosition;
+        }
+    
+        public void setIssPosition(IssPosition issPosition) {
+            mIssPosition = issPosition;
+        }
+    
+        public String getMessage() {
+            return mMessage;
+        }
+    
+        public void setMessage(String message) {
+            mMessage = message;
+        }
+    
+        public Long getTimestamp() {
+            return mTimestamp;
+        }
+    
+        public void setTimestamp(Long timestamp) {
+            mTimestamp = timestamp;
+        }
+    
+    }
+</code></pre>
+
+<p>Oraz dla IssPosition:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="nd">@Generated</span><span class="o">(</span><span class="s">"net.hexar.json2pojo"</span><span class="o">)</span>
+    <span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"unused"</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">IssPosition</span> <span class="o">{</span>
+    
+        <span class="nd">@SerializedName</span><span class="o">(</span><span class="s">"latitude"</span><span class="o">)</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">mLatitude</span><span class="o">;</span>
+        <span class="nd">@SerializedName</span><span class="o">(</span><span class="s">"longitude"</span><span class="o">)</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">mLongitude</span><span class="o">;</span>
+    
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getLatitude</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mLatitude</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLatitude</span><span class="o">(</span><span class="n">String</span> <span class="n">latitude</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mLatitude</span> <span class="o">=</span> <span class="n">latitude</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="n">String</span> <span class="nf">getLongitude</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mLongitude</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLongitude</span><span class="o">(</span><span class="n">String</span> <span class="n">longitude</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mLongitude</span> <span class="o">=</span> <span class="n">longitude</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>W głównym folderze z kodem źródłowym, czyli obok paczki pojos, tworzymy paczkę api. W niej tworzymy interfejs dla Retrofit o nazwie <code class="highlighter-rouge">OpenNotifyService</code>. Ma on tylko jedną metodę abstrakcyjną: <code class="highlighter-rouge">getIssLocation()</code>. Anotujemy ją Retrofitowym <code class="highlighter-rouge">@GET</code>, podając ścieżkę do interesującego nas node’u API (czyli co jest po slashu głównego adresu):</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">OpenNotifyService</span> <span class="o">{</span>
+    
+        <span class="nd">@GET</span><span class="o">(</span><span class="s">"iss-now"</span><span class="o">)</span>
+        <span class="n">Call</span><span class="o">&lt;</span><span class="n">IssLocationJSON</span><span class="o">&gt;</span> <span class="nf">getIssLocation</span><span class="o">();</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Mamy już interfejs, POJO i adres.</p>
+
+<p>Później zapiszemy dane zwrotne z lokalizacją w LiveData. LiveData nie ma jednak wbudowanego sposobu na radzenie sobie z żądaniami internetowymi. A co jeśli użytkownik nie będzie mieć połączenia internetowego albo serwer OpenNotify przestanie działać? Zwrócimy null? Dokumentacja sugeruje <a href="https://developer.android.com/topic/libraries/architecture/guide#addendum">takie</a> rozwiązanie, ale na nasze minimalne potrzeby wystarczy dużo prostsze. Zrobimy wrapper dla naszych IssLocationJSON, posiadający pole informujące nas o stanie połączenia. Instancje tego wrappera zapiszemy dopiero jako LiveData. Wówczas będziemy mieli dostęp do informacji, czy posiadamy dane o lokalizacji ISS, czy też ich nie mamy, bez problemów z nullami.</p>
+
+<p>W paczce pojos tworzymy klasę <code class="highlighter-rouge">IssLocationWrapper</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">package</span> <span class="n">whereisspacestation</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">tryouts</span><span class="o">.</span><span class="na">whereisspacestation</span><span class="o">.</span><span class="na">pojos</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">IssLocationWrapper</span> <span class="o">{</span>
+    
+        <span class="kd">private</span> <span class="n">IssLocationJSON</span> <span class="n">mIssLocationJson</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kt">int</span> <span class="n">mResponseStatus</span><span class="o">;</span>
+    
+    
+        <span class="kd">public</span> <span class="n">IssLocationJSON</span> <span class="nf">getIssLocationJson</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mIssLocationJson</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setIssLocationJson</span><span class="o">(</span><span class="n">IssLocationJSON</span> <span class="n">mIssLocationJson</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">mIssLocationJson</span> <span class="o">=</span> <span class="n">mIssLocationJson</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getResponseStatus</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mResponseStatus</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setResponseStatus</span><span class="o">(</span><span class="kt">int</span> <span class="n">mResponseStatus</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">mResponseStatus</span> <span class="o">=</span> <span class="n">mResponseStatus</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Stworzymy też abstrakcyjną klasę <code class="highlighter-rouge">Status</code> ze statycznymi kodami dla statusu naszego wrappera. Tworzymy paczkę <code class="highlighter-rouge">util</code> i w niej klasę <code class="highlighter-rouge">Status</code> (pewnie bardziej elegancko byłoby użyć enumów, ale dla naszych potrzeb wystarczą zwykłe integery):</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kn">package</span> <span class="n">whereisspacestation</span><span class="o">.</span><span class="na">com</span><span class="o">.</span><span class="na">tryouts</span><span class="o">.</span><span class="na">whereisspacestation</span><span class="o">.</span><span class="na">util</span><span class="o">;</span>
+    
+    <span class="kd">public</span> <span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">Status</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">RESPONSE_OK</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">RESPONSE_EMPTY</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">final</span> <span class="kd">static</span> <span class="kt">int</span> <span class="n">RESPONSE_FAILURE</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    
+    
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getResponseOk</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">RESPONSE_OK</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getResponseEmpty</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">RESPONSE_EMPTY</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">getResponseFailure</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">RESPONSE_FAILURE</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="repository">Repository</h3>
+
+<p>Możemy już stworzyć instancję klasy <code class="highlighter-rouge">Retrofit</code>, która będzie zczytywać dane o lokalizacji ISS z serwera. Mając w pamięci diagram przepływu danych z komponentami architektury Androida, musimy stworzyć <code class="highlighter-rouge">Repository</code>.</p>
+
+<p>Tworzymy paczkę <code class="highlighter-rouge">repository</code>, a w niej klasę <code class="highlighter-rouge">IssLocationRepository</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">IssLocationRepository</span> <span class="o">{</span>
+    
+        <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">BASE_URL</span> <span class="o">=</span> <span class="s">"http://api.open-notify.org/"</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="n">Retrofit</span> <span class="n">mRetrofit</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="kd">static</span> <span class="n">OpenNotifyService</span> <span class="n">service</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">MutableLiveData</span><span class="o">&lt;</span><span class="n">IssLocationWrapper</span><span class="o">&gt;</span> <span class="n">mSpaceStationLocation</span><span class="o">;</span>
+    
+        <span class="kd">public</span> <span class="nf">IssLocationRepository</span><span class="o">()</span> <span class="o">{</span>
+    
+            <span class="n">mRetrofit</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Retrofit</span><span class="o">.</span><span class="na">Builder</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">baseUrl</span><span class="o">(</span><span class="n">BASE_URL</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">addConverterFactory</span><span class="o">(</span><span class="n">GsonConverterFactory</span><span class="o">.</span><span class="na">create</span><span class="o">())</span>
+                    <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+            <span class="n">service</span> <span class="o">=</span> <span class="n">mRetrofit</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="n">OpenNotifyService</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="n">mSpaceStationLocation</span> <span class="o">=</span> <span class="k">new</span> <span class="n">MutableLiveData</span><span class="o">&lt;&gt;();</span>
+    
+            <span class="n">setLocation</span><span class="o">();</span>
+        <span class="o">}</span>
+    
+    
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLocation</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">final</span> <span class="n">IssLocationWrapper</span> <span class="n">issLocationWrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IssLocationWrapper</span><span class="o">();</span>
+            <span class="n">service</span><span class="o">.</span><span class="na">getIssLocation</span><span class="o">().</span><span class="na">enqueue</span><span class="o">(</span><span class="k">new</span> <span class="n">Callback</span><span class="o">&lt;</span><span class="n">IssLocationJSON</span><span class="o">&gt;()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onResponse</span><span class="o">(</span><span class="n">Call</span><span class="o">&lt;</span><span class="n">IssLocationJSON</span><span class="o">&gt;</span> <span class="n">call</span><span class="o">,</span> <span class="n">Response</span><span class="o">&lt;</span><span class="n">IssLocationJSON</span><span class="o">&gt;</span> <span class="n">response</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">response</span><span class="o">.</span><span class="na">isSuccessful</span><span class="o">())</span> <span class="o">{</span>
+                        <span class="n">IssLocationJSON</span> <span class="n">location</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="na">body</span><span class="o">();</span>
+                        <span class="k">if</span><span class="o">(</span><span class="n">location</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">setIssLocationJson</span><span class="o">(</span><span class="n">location</span><span class="o">);</span>
+                            <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">setResponseStatus</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">getResponseOk</span><span class="o">());</span>
+                            <span class="n">mSpaceStationLocation</span><span class="o">.</span><span class="na">postValue</span><span class="o">(</span><span class="n">issLocationWrapper</span><span class="o">);</span>
+                        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                            <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">setResponseStatus</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">getResponseEmpty</span><span class="o">());</span>
+                            <span class="n">mSpaceStationLocation</span><span class="o">.</span><span class="na">postValue</span><span class="o">(</span><span class="n">issLocationWrapper</span><span class="o">);</span>
+                        <span class="o">}</span> 
+                    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                        <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">setResponseStatus</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">getResponseEmpty</span><span class="o">());</span>
+                        <span class="n">mSpaceStationLocation</span><span class="o">.</span><span class="na">postValue</span><span class="o">(</span><span class="n">issLocationWrapper</span><span class="o">);</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+    
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailure</span><span class="o">(</span><span class="n">Call</span><span class="o">&lt;</span><span class="n">IssLocationJSON</span><span class="o">&gt;</span> <span class="n">call</span><span class="o">,</span> <span class="n">Throwable</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">setResponseStatus</span><span class="o">(</span><span class="n">Status</span><span class="o">.</span><span class="na">getResponseFailure</span><span class="o">());</span>
+                    <span class="n">mSpaceStationLocation</span><span class="o">.</span><span class="na">postValue</span><span class="o">(</span><span class="n">issLocationWrapper</span><span class="o">);</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+        <span class="o">}</span>
+    
+    
+        <span class="kd">public</span> <span class="n">MutableLiveData</span><span class="o">&lt;</span><span class="n">IssLocationWrapper</span><span class="o">&gt;</span> <span class="nf">getLocation</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mSpaceStationLocation</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Od razu korzystamy z LiveData (w tym wypadku <code class="highlighter-rouge">MutableLiveData</code>, które różni się tylko tym, że upublicznia nam metody do zapisu danych w LiveData), bo z metody <code class="highlighter-rouge">getLocation()</code> będzie korzystać ViewModel.</p>
+
+<p>W konstruktorze konfigurujemy <code class="highlighter-rouge">Retrofit</code>: podajemy bazowe URL API, informujemy, z jakiego konwertera ma korzystać (GSON w tym wypadku, z racji na stosowany w OpenNotify JSON), no i jakie żądania ma obsługiwać (nasz OpenNotifyService).</p>
+
+<p>Metoda <code class="highlighter-rouge">setLocation()</code> wykonuje żądanie GET asynchronicznie, stąd <code class="highlighter-rouge">.enqueue</code> i <code class="highlighter-rouge">CallBack</code>. Jeśli nie ma połączenia z internetem wywołana zostanie przeciążona metoda <code class="highlighter-rouge">onFailure()</code>. Metoda <code class="highlighter-rouge">onResponse()</code> natomiast zostanie wywołana, jeśli otrzymamy odpowiedź z serwera. Jeśli wartość <code class="highlighter-rouge">response.isSuccesful()</code> jest false, to najwyraźniej dostaliśmy odpowiedź 404, 500 albo inną odpowiedź błędu, ale nie dostaliśmy w odpowiedzi danych o lokalizacji ISS, na których nam zależało. Może też się zdarzyć, że nasze żądanie zostanie przesunięte pod inny adres, ale nie otrzymamy odpowiedzi o błędnym adresie, bo adres działa (nie ma pod nim żadnych istotnych dla nas danych).</p>
+
+<p>We wszystkich tych przypadkach, a także kiedy po prostu otrzymujemy interesujące nas dane (hurra), stosownie konfigurujemy obiekt <code class="highlighter-rouge">MutableLiveData&lt;IssLocationWrapper&gt;</code>.</p>
+
+<p>Nic więcej w naszym Repository nie musimy dodawać.</p>
+
+<h3 id="viewmodel">ViewModel</h3>
+
+<p>Konstrukcja i struktura ViewModel w naszym przypadku jest bardzo prosta: tworzymy nową klasę, rozszerzającą klasę ViewModel o nazwie <code class="highlighter-rouge">LocationViewModel</code>:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LocationViewModel</span> <span class="kd">extends</span> <span class="n">ViewModel</span> <span class="o">{</span>
+    
+        <span class="kd">private</span> <span class="n">IssLocationRepository</span> <span class="n">mRepository</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">MutableLiveData</span><span class="o">&lt;</span><span class="n">IssLocationWrapper</span><span class="o">&gt;</span> <span class="n">mIssLocation</span><span class="o">;</span>
+    
+        <span class="kd">public</span> <span class="nf">LocationViewModel</span><span class="o">()</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">();</span>
+            <span class="n">mRepository</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IssLocationRepository</span><span class="o">();</span>
+            <span class="n">mIssLocation</span> <span class="o">=</span> <span class="n">mRepository</span><span class="o">.</span><span class="na">getLocation</span><span class="o">();</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="n">MutableLiveData</span><span class="o">&lt;</span><span class="n">IssLocationWrapper</span><span class="o">&gt;</span> <span class="nf">getLocation</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mIssLocation</span><span class="o">;</span>
+        <span class="o">}</span>
+    
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">checkLocation</span><span class="o">()</span> <span class="o">{</span>
+            <span class="n">mRepository</span><span class="o">.</span><span class="na">setLocation</span><span class="o">();</span>
+        <span class="o">}</span>
+    
+    
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>Nasz LocationViewModel jest w stanie zwrócić informację o lokalizacji ISS (<code class="highlighter-rouge">getLocation()</code>) oraz wysłać żądanie do repozytorium o ponowne ustalenie lokalizacji.</p>
+
+<h3 id="ui-mainactivity">UI, MainActivity</h3>
+
+<p>Jesteśmy gotowi by przekazać dane do warstwy UI. Przypomnijmy, że na layout <code class="highlighter-rouge">MainActivity</code> składają się TextView, w którym wyświetlać będziemy lokalizację ISS oraz Button do odświeżania lokalizacji.</p>
+
+<p>MainActivity:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+    
+        <span class="kd">private</span> <span class="n">LocationViewModel</span> <span class="n">mLocationViewModel</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">TextView</span> <span class="n">mLocationTextView</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">Button</span> <span class="n">mLocationCheckButton</span><span class="o">;</span>
+    
+        <span class="nd">@Override</span>
+        <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+            <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_main</span><span class="o">);</span>
+    
+            <span class="n">mLocationTextView</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">coordinates</span><span class="o">);</span>
+    
+            <span class="n">mLocationViewModel</span> <span class="o">=</span> <span class="n">ViewModelProviders</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">get</span><span class="o">(</span><span class="n">LocationViewModel</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+            <span class="n">mLocationViewModel</span><span class="o">.</span><span class="na">getLocation</span><span class="o">().</span><span class="na">observe</span><span class="o">(</span><span class="k">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">Observer</span><span class="o">&lt;</span><span class="n">IssLocationWrapper</span><span class="o">&gt;()</span> <span class="o">{</span>
+                        <span class="nd">@Override</span>
+                        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onChanged</span><span class="o">(</span><span class="nd">@Nullable</span> <span class="n">IssLocationWrapper</span> <span class="n">issLocationWrapper</span><span class="o">)</span> <span class="o">{</span>
+                            <span class="k">switch</span><span class="o">(</span><span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">getResponseStatus</span><span class="o">())</span> <span class="o">{</span>
+                                <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+                                    <span class="n">mLocationTextView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span>
+                                        <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">getIssLocationJson</span><span class="o">().</span><span class="na">getIssPosition</span><span class="o">().</span><span class="na">getLatitude</span><span class="o">()</span> <span class="o">+</span> <span class="s">" "</span>
+                                                <span class="o">+</span> <span class="n">issLocationWrapper</span><span class="o">.</span><span class="na">getIssLocationJson</span><span class="o">().</span><span class="na">getIssPosition</span><span class="o">().</span><span class="na">getLongitude</span><span class="o">());</span>
+                                    <span class="k">break</span><span class="o">;</span>
+                                <span class="k">case</span> <span class="mi">0</span><span class="o">:</span>
+                                    <span class="n">mLocationTextView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">response_empty</span><span class="o">);</span>
+                                    <span class="k">break</span><span class="o">;</span>
+                                <span class="k">case</span> <span class="o">-</span><span class="mi">1</span><span class="o">:</span>
+                                    <span class="n">mLocationTextView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">response_failure</span><span class="o">);</span>
+                                    <span class="k">break</span><span class="o">;</span>
+                                <span class="k">default</span><span class="o">:</span>
+                                    <span class="n">mLocationTextView</span><span class="o">.</span><span class="na">setText</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">response_empty</span><span class="o">);</span>
+                                    <span class="k">break</span><span class="o">;</span>
+                            <span class="o">}</span>
+    
+                        <span class="o">}</span>
+            <span class="o">});</span>
+    
+            <span class="n">mLocationCheckButton</span> <span class="o">=</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">checkButton</span><span class="o">);</span>
+            <span class="n">mLocationCheckButton</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="n">mLocationViewModel</span><span class="o">.</span><span class="na">checkLocation</span><span class="o">();</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+    
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></div></div>
+
+<p>LocationViewModel dostarcza nam metoda <code class="highlighter-rouge">get()</code> <a href="https://developer.android.com/reference/android/arch/lifecycle/ViewModelProvider"><code class="highlighter-rouge">ViewModelProvidera</code></a> (przypisanego do Activity), nie tworzymy ViewModeli ze ‘‘zwykłego’’ konstruktora.</p>
+
+<p>Następnie zaczynamy obserwować (<code class="highlighter-rouge">observe()</code>) dane zwracane z ViewModel w metodzie <code class="highlighter-rouge">getLocation()</code>. Jeśli pamiętamy sprzed chwili, zwraca ona nam <code class="highlighter-rouge">MutableLiveData&lt;IssLocationWrapper&gt;</code>, a więc nasz obiekt z informacjami o lokalizacji ISS oraz stanem połączenia.</p>
+
+<p>Jeśli dane te ulegną zmianie wywołana zostanie metoda<code class="highlighter-rouge"> onChanged()</code> obserwatora. Sprawdzany jest status połączenia i stosownie uzupełniany TextView.</p>
+
+<p>Pod koniec metody <code class="highlighter-rouge">onCreate()</code> mamy jeszcze zdefiniowany listener dla przycisku, obsługujący naciskanie przycisku przez użytkownika. Zauważmy, że nie wywołuje on już metody pobierającej dane z ViewModelu, a jedynie metodę aktualizacją lokalizację w samym LiveData w ViewModelu. Jako, że stan tego obiektu obserwujemy, to po zmianie jego zawartości automatycznie ujrzymy zmianę na poziomie UI w TextView.</p>
+
+<h3 id="finisz">Finisz</h3>
+
+<p>I to tyle, po odpaleniu aplikacji, zakładając dostęp do internetu, ujrzymy obrazek z początku artykułu:</p>
+
+<p><img src="/assets/images/oldblog/issfinishedappl.png" alt="image-center" class="align-center"></p>
+
+<p>Jeśli zaś włączymy w emulatorze/telefonie tryb samolotowy, to ujrzymy:</p>
+
+<p><img src="/assets/images/oldblog/issfinishedapp.png" alt="image-center" class="align-center"></p>
+
+<p>Podsumowując, zbudowaliśmy prostą aplikację, korzystającą z bibliotek Architecture Components oraz Retrofit. Warstwa UI jest odseparowana od reszty poprzez ViewModel. Wyświetlana informacja o lokalizacji ISS pochodzi z obserwowanego z poziomu UI obiektu LiveData przekazywanego przez ViewModel. ViewModel pozyskuje potrzebne informacje z Repository. W Repository wykonujemy połączenie z API przez Retrofit. UI nie wie, jak przetwarzane i skąd źródłowo pochodzą dane do wyświetlenia. ViewModel również na dobrą sprawę nie wie. Repository i ViewModel pozbawione są odwołań do klas związanych z UI. Warstwa UI natomiast pozbawiona jest odwołań do klas bezpośrednio związanych z logiką manipulacji i pozyskiwania danych.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/tags/#coding" class="page__taxonomy-item" rel="tag">coding</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fas fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="/categories/#blog" class="page__taxonomy-item" rel="tag">blog</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-04-29T17:02:00+02:00">April 29, 2018</time></p>
+        
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/blog/AngularJS-Spotibar/" class="pagination--pager" title="[OLD] SpotiBar: ANGULARJS
+">Previous</a>
+    
+    
+      <a href="/blog/PandocScripts/" class="pagination--pager" title="Writing workflow: Pandoc scripts
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap">
+<input type="search" id="search" aria-placeholder="Enter your search term..." class="search-input" tabindex="-1" placeholder="Enter your search term...">
+    <div id="results" class="results"></div>
+</div>
+
+      </div>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">© 2019 Michał Wyrwa. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.8.2/js/all.js" integrity="sha384-DJ25uNYET2XCl5ZF++U8eNxPWqcKohUUBUpKGlNLMchM7q4Wjg2CUpjHLaL8yYPH" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/assets/js/lunr/lunr.min.js"></script>
+<script src="/assets/js/lunr/lunr-store.js"></script>
+<script src="/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

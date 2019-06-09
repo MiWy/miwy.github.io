@@ -1,13 +1,11 @@
 main:
-  - title: "Posts"
-    url: /posts/
-  - title: "Papers"
+  - title: "Papers & Talks"
     url: /papers/
-  - title: "Teaching"
+  - title: "Teaching Materials"
     url: /teaching/
-  - title: "CV"
-    url: /cv/
   - title: "About"
     url: /about/
+  - title: "Posts"
+    url: /posts/
   - title: "Tags"
     url: /tags/
