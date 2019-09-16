@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Michał Wyrwa</title>
+    <title>Blog on Michał Wyrwa</title>
     <link>https://miwy.github.io/blog/</link>
-    <description>Recent content in Blogs on Michał Wyrwa</description>
+    <description>Recent content in Blog on Michał Wyrwa</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>&amp;copy; 2019 Michał Wyrwa</copyright>
     <lastBuildDate>Sat, 08 Jun 2019 11:02:00 -0400</lastBuildDate>
