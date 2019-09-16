@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Michał Wyrwa's Homepage">
+  <meta name="author" content="Michał Wyrwa">
+  
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:creator" content="@">
+    <meta name="twitter:title" content="Writing workflow: Pandoc scripts">
+    <meta name="twitter:description" content="tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it Having an unobtrusive workflow is important.
+There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want .docx, others .tex or .pdfs, all complying with a set of strict formatting rules. Often enough a faithful conversion of .">
+
+    <meta property="og:url" content="/blog/2019-06-08-pandocscripts/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Writing workflow: Pandoc scripts" />
+    <meta property="og:description" content="tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it Having an unobtrusive workflow is important.
+There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want .docx, others .tex or .pdfs, all complying with a set of strict formatting rules. Often enough a faithful conversion of ." />
+
+
+  <title>Writing workflow: Pandoc scripts | Michał Wyrwa</title>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/923575d7ad.js"></script>
+  <link href="/css/prism.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/academicons.min.css" />
+  <link href="/css/scarab.css" rel="stylesheet">
+  
+  
+  
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://miwy.github.io">Michał Wyrwa</a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="/publications/">
+            <i class="fa far fa-copy"></i>&nbsp;
+            RESEARCH
+          </a>
+        </li>
+        <li>
+          <a href="/blog/">
+            <i class="fa fas fa-quote-right"></i>&nbsp;
+            BLOG
+          </a>
+        </li>
+        <li>
+          <a href="/teaching/">
+            <i class="fa fas fa-user-graduate"></i>&nbsp;
+            TEACHING
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+  <div class="container">
+
+    
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+
+        <h2>Writing workflow: Pandoc scripts</h1>
+        <p>
+          <em>Sat, Jun 8, 2019</em>
+        </p>
+        <p>
+          
+
+<h3 id="tl-dr-i-uploaded-my-pandoc-workflow-to-github-https-github-com-miwy-my-pandoc-scripts-feel-free-to-use-it">tl;dr I uploaded my Pandoc workflow to <a href="https://github.com/MiWy/my-pandoc-scripts">GitHub</a>, feel free to use it</h3>
+
+<p>Having an unobtrusive workflow is important.</p>
+
+<p>There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want <code>.docx</code>, others <code>.tex</code> or <code>.pdfs</code>, all complying with a set of strict formatting rules. Often enough a faithful conversion of <code>.odt</code> to <code>.docx</code> means spending hours on fiddling with margins, fonts, and other details. And do not get me started on &lsquo;We want <code>.tex</code> files!&lsquo;.</p>
+
+<p>I think that writing itself should be separated from such mundane worries. While I absolutely love a good-looking document, if you have something to write, then write it and do not worry about the looks. Write in Notepad, in <code>.txt</code>, in Word, in TeX, whatever. Worry about the final format and aesthetics later.</p>
+
+<p><a href="https://pandoc.org">Pandoc</a> is a command-line universal document converter. Html, <code>.epub</code>, LaTeX, Markdown, <code>.rtf</code>, <code>.doc</code>, anything can be converted to anything. You just need to set some rules.</p>
+
+<p>I uploaded my <a href="https://pandoc.org">Pandoc</a> scripts on  <a href="https://github.com/MiWy/my-pandoc-scripts">GitHub</a>. I use <a href="http://literatureandlatte.com">Scrivener</a> for most of my writing, but I believe in writing in <a href="http://plain-text.co/index.html#introduction">plain text</a>. So i export my Scrivener projects to Markdown. I set up the script to accept .md file and a .bib file. As most of the times I need a <code>.pdf</code> with a <code>.docx</code> or <code>.tex</code> reference, Pandoc converts <code>.md</code> accordingly.</p>
+
+<p>Example, a draft-looking PDF:
+<img src="/images/pandoc/pandoc1.png" alt="image-center" /></p>
+
+<p>A little bit better looking PDF:
+<img src="/images/pandoc/pandoc2.png" alt="image-center" /></p>
+
+<p>The <code>.md</code> file just needs to have a title field in the <strong>YAML</strong> metadata.</p>
+
+<p>The script is dead simple on purpose, so that anyone with 101 in BASH can understand it and tweak it. It uses free fonts: (<a href="http://www.latofonts.com">Lato</a> and <a href="https://www.stixfonts.org">STIX</a>), as well as <code>apa</code> and <code>spbasic</code> <code>csl</code>/<code>bst</code> files.</p>
+
+<p>If you do not use <code>.bib</code> for your bibliography, <a href="https://www.mendeley.com/">Mendeley</a> and other apps have export to bibtex option. In Mendeley you can make it so that every time you add a record to your library, a .bib file is automatically updated. Symlink that file to Pandoc script&rsquo;s directory and you are good to go.</p>
+
+<p>I know there are more academic-oriented Pandoc templates (<a href="https://pandoc-scholar.github.io">pandoc-scholar</a>), Pandoc automation tools (<a href="https://github.com/htdebeer/pandocomatic">pandocomatic</a>), and even Scrivener Ruby script for compiling for pandocomatic (<a href="https://github.com/iandol/scrivomatic">scrivomatic</a>). While these are great, they are too robust for my needs.</p>
+
+<p>Cheers</p>
+
+        </p>
+
+        <div>
+          <div class="post-back-link">
+    <a href="javascript: history.back()">
+        <i class="fa fa-arrow-left"></i> 
+        Back
+    </a>
+</div>
+        </div>
+      </div>
+    </div>
+    
+
+<footer>
+
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+  integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="/js/prism.js"></script>
+
+</body>
+
+</html>

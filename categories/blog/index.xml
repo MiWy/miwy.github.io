@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blog on Michał Wyrwa</title>
+    <link>https://miwy.github.io/categories/blog/</link>
+    <description>Recent content in blog on Michał Wyrwa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019 Michał Wyrwa</copyright>
+    <lastBuildDate>Sat, 08 Jun 2019 11:02:00 -0400</lastBuildDate>
+    
+	<atom:link href="https://miwy.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writing workflow: Pandoc scripts</title>
+      <link>https://miwy.github.io/blog/2019-06-08-pandocscripts/</link>
+      <pubDate>Sat, 08 Jun 2019 11:02:00 -0400</pubDate>
+      
+      <guid>https://miwy.github.io/blog/2019-06-08-pandocscripts/</guid>
+      <description>tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it Having an unobtrusive workflow is important.
+There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want .docx, others .tex or .pdfs, all complying with a set of strict formatting rules. Often enough a faithful conversion of .</description>
+    </item>
+    
+    <item>
+      <title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit</title>
+      <link>https://miwy.github.io/blog/2018-04-29-viewmodel/</link>
+      <pubDate>Sun, 29 Apr 2018 11:02:00 -0400</pubDate>
+      
+      <guid>https://miwy.github.io/blog/2018-04-29-viewmodel/</guid>
+      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.
+Aplikacja wyglądać będzie tak:
+{: .align-center}
+Komponenty architektury Androida Architecture Components to biblioteki dla Androida, zaprezentowane przez Google na I/O &amp;lsquo;17.</description>
+    </item>
+    
+    <item>
+      <title>[OLD] SpotiBar: ANGULARJS</title>
+      <link>https://miwy.github.io/blog/2018-04-13-angularjs-spotibar/</link>
+      <pubDate>Fri, 13 Apr 2018 11:02:00 -0400</pubDate>
+      
+      <guid>https://miwy.github.io/blog/2018-04-13-angularjs-spotibar/</guid>
+      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+PART 1 Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.
+Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo Mnogości JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.</description>
+    </item>
+    
+    <item>
+      <title>[OLD] SpotiBar: Spotify &#43; Foobar</title>
+      <link>https://miwy.github.io/blog/2017-09-13-spotibar/</link>
+      <pubDate>Wed, 13 Sep 2017 11:02:00 -0400</pubDate>
+      
+      <guid>https://miwy.github.io/blog/2017-09-13-spotibar/</guid>
+      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+SPOTIBAR Spotify zacząłem używać od momentu jak wprowadzili abonament w PLN. Kilka lat doświadczenia się zatem zebrało i choć bardzo sobie cenię tę usługę, to jest jedna rzecz, która mi strasznie w niej przeszkadza.
+{: .align-center}
+Od razu zaznaczę, że należę do grona ludzi, którzy trzymać swoją kolekcję muzyczną w ordnungu. Jak kupuję płytę CD, to znajduję dla niej miejsce na odpowiedniej półeczce, scrobbluję do last.</description>
+    </item>
+    
+    <item>
+      <title>[OLD] Java 101: Enum &#43; Servlets</title>
+      <link>https://miwy.github.io/blog/2017-07-06-enumsql/</link>
+      <pubDate>Thu, 06 Jul 2017 11:02:00 -0400</pubDate>
+      
+      <guid>https://miwy.github.io/blog/2017-07-06-enumsql/</guid>
+      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+ENUM Typ enum, dodany w wersji 1.5, służy do definiowania stałych. Kiedy mamy z nim do czynienia, to wiemy że mamy do wyboru ograniczony zbiór możliwych opcji. Przykładowo, definiując enum poraRoku z góry wiemy, że będzie on przyjmować wartości jedynie spośród ZIMA, WIOSNA, LATO i JESIEN.
+Każdy enum domyślnie rozszerza klasę java.lang.Enum, dlatego nie może rozszerzać żadnej innej klasy.</description>
+    </item>
+    
+    <item>
+      <title>[OLD] Courier App for Android</title>
+      <link>https://miwy.github.io/blog/2017-05-17-android_courier_firebase/</link>
+      <pubDate>Wed, 17 May 2017 15:34:30 -0400</pubDate>
+      
+      <guid>https://miwy.github.io/blog/2017-05-17-android_courier_firebase/</guid>
+      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+FIRST PART The idea for a courier app isn’t new. You can find countless examples on Google Play Store. But building one is actually quite handy exercise in integrating Android with Firebase services.
+In this series we will cover only parts of building the actual bike courier app. Focus will be on Firebase integration and also some design pattern strategies.</description>
+    </item>
+    
+  </channel>
+</rss>

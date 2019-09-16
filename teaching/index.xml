@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teaching on Michał Wyrwa</title>
+    <link>https://miwy.github.io/teaching/</link>
+    <description>Recent content in Teaching on Michał Wyrwa</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>&amp;copy; 2019 Michał Wyrwa</copyright>
+    <lastBuildDate>Sun, 01 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://miwy.github.io/teaching/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction to Cognitive Science 2019/2020</title>
+      <link>https://miwy.github.io/teaching/wdk2019/</link>
+      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/wdk2019/</guid>
+      <description>Przedmiot realizowany na pierwszym semestrze licencjackich studiów z kognitywistyki na UAM (30h wykładów, 30h ćwiczeń). Na zajęciach będziemy mieć szansę porozmawiać czym są: procesy poznawcze, umysł, (sztuczna) inteligencja, percepcja, język, emocje, świadomość, ucieleśnienie i inne. O głównych ideach kognitywistycznych będziemy traktować szeroko, z perspektywy inter- (multi?) dyscyplinarnej, spacerując pomiędzy filozofią, psychologią poznawczą, neuronauką, biologią ewolucyjną, informatyką i językoznawstwem. Będzie dużo oduczania się własnych przesądów na temat umysłu i procesów poznawczych.</description>
+    </item>
+    
+    <item>
+      <title>Philosophy of mind 2018/2019</title>
+      <link>https://miwy.github.io/teaching/fu2019/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/fu2019/</guid>
+      <description>&lt;p&gt;This was a course for second-year undergraduate students.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Cognitive Science 2018/2019</title>
+      <link>https://miwy.github.io/teaching/wdk2018/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/wdk2018/</guid>
+      <description>This was a course for first-year undergraduate students.</description>
+    </item>
+    
+    <item>
+      <title>Philosophy of mind 2017/2018</title>
+      <link>https://miwy.github.io/teaching/fu2018/</link>
+      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/fu2018/</guid>
+      <description>This was a course for second-year undergraduate students.</description>
+    </item>
+    
+    <item>
+      <title>Information Technology 2017/2018</title>
+      <link>https://miwy.github.io/teaching/ti2017/</link>
+      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/ti2017/</guid>
+      <description>&lt;p&gt;This was a course for first-year undergraduate students.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Information Technology 2016/2017</title>
+      <link>https://miwy.github.io/teaching/ti2016/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/ti2016/</guid>
+      <description>&lt;p&gt;This was a course for first-year undergraduate students.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Philosophy 2016/2017</title>
+      <link>https://miwy.github.io/teaching/wdf2016/</link>
+      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/wdf2016/</guid>
+      <description>This was a course for first-year undergraduate students.</description>
+    </item>
+    
+    <item>
+      <title>Information Technology 2015/2016</title>
+      <link>https://miwy.github.io/teaching/ti2015/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/ti2015/</guid>
+      <description>&lt;p&gt;This was a course for first-year undergraduate students.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Philosophy 2015/2016</title>
+      <link>https://miwy.github.io/teaching/wdf2015/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/wdf2015/</guid>
+      <description>This was a course for first-year undergraduate students.</description>
+    </item>
+    
+    <item>
+      <title>Information Technology  2014/2015</title>
+      <link>https://miwy.github.io/teaching/ti2014/</link>
+      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/ti2014/</guid>
+      <description>&lt;p&gt;This was a course for first-year undergraduate students.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Logic 2014/2015</title>
+      <link>https://miwy.github.io/teaching/wdl2014/</link>
+      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://miwy.github.io/teaching/wdl2014/</guid>
+      <description>This was a course for first-year undergraduate students.</description>
+    </item>
+    
+  </channel>
+</rss>

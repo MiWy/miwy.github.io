@@ -1,0 +1,619 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:300|Alegreya:400,400i,700|Ubuntu:500);
+
+/* Color scheme variables */
+
+:root {
+  --red-color: #AD2A1A;
+  --lighter-red-color: #C02F1D;
+  --green-color: #93A661;
+  --lighter-green-color: #A3B86C;
+  --orange-color: #DA621E;
+  --lighter-orange-color: #F26D21;
+  --yellow-color: #D3B53D;
+  --lighter-yellow-color: #EBC944;
+  --blue-color: #093145;
+  --lighter-blue-color: #0D3D56;
+  --grey-color: #9C9C9C;
+  --text-color: #131516;
+  --background-color: #fff;
+}
+
+body {
+  padding-top: 70px;
+  background: var(--background-color);
+  color: var(--text-color);
+  font-family: "Alegreya", "Hoefler Text", Times, serif;
+  font-weight: 400;
+  font-size: 14pt;
+}
+
+.main {
+  min-height: 100%;
+  height: auto !important;
+}
+
+a {
+  color: var(--red-color);
+}
+a:hover {
+  color: var(--lighter-red-color);
+  text-decoration: none;
+}
+.pub-link a {
+  font-weight: bold;
+}
+.blog-post a {
+  color: var(--text-color);
+  border-bottom: 1px dotted #ca2d6a;
+}
+.blog-post a:hover {
+  color: var(--lighter-red-color);
+}
+.post-back-link a {
+  color: var(--red-color);
+  border-bottom: none;
+}
+
+h1, h2, h3, h4  {
+  font-weight: bold;  
+  letter-spacing: .01em;
+}
+.area-header {
+  font-family: "Roboto Slab", serif;
+  font-weight: normal;  
+  letter-spacing: 0rem;
+}
+
+.blog-post h1, h2, h3 {
+  color: var(--text-color);
+}
+.blog-post h1 {
+  font-size: 2.5rem;
+}
+.blog-post h2 {
+  font-size: 2.2rem;
+}
+.post-body h3 {
+  font-size: 2rem;
+}
+h1.post-title {
+  font-size: 3rem;
+  margin-bottom: .9em;
+}
+div.post-metadata {
+  margin-bottom: 2.5rem;
+}
+div.publication-metadata {
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.img-circle {
+  border-radius: 50%;
+}
+
+.floatright {
+  float: right;
+}
+
+.list-indented {
+  margin-left: .75em;
+}
+
+.list-hanging {
+  padding-left: 1.25em;
+	text-indent: -1.25em;
+}
+
+.more-link {
+  font-size: .75em;
+  font-weight: bold;
+  font-family: "Roboto Slab";
+  letter-spacing: 1px;
+}
+
+.epigraph {
+  margin-top: 1em;
+  font-style: italic;
+  padding-bottom: 1.35em;
+}
+
+code {
+  font-size: .8em;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  font-family: "Inconsolata", Menlo, Monaco, "Courier New", monospace;
+  font-size: .9em;
+}
+
+.post-tags {
+  font-size: .85em;
+  font-style: italic;
+}
+
+.post-date {
+  margin-bottom: .5em;
+}
+
+.section-item {
+  margin-bottom: .75em;
+}
+
+.hanging-no-bullets > ul {
+  list-style-type: none;
+  padding: 0;
+  padding-left: 1.25em;
+	text-indent: -1.25em;
+}
+
+.align-top {
+  display: inline;
+  vertical-align: text-top;
+}
+
+footer {
+
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+ 
+}
+
+footer p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: .75em;
+  color: var(--background-color)
+}
+
+footer a {
+  font-style: normal;
+}
+
+.footnote-return sup {
+  display: none;
+}
+.footnote-return:after {
+  content: '↩';
+}
+
+.details {
+  float: right;
+}
+
+
+/* Pagination */
+
+nav > ul.pagination > li > a {
+  color: var(--red-color);
+  background: var(--background-color);
+  border-color: var(--lighter-red-color) !important;
+  font-style: italic;
+}
+
+nav > ul.pagination > li > a:hover {
+  color: var(--lighter-red-color);
+  background: var(--background-color);
+  text-decoration: none;
+}
+
+nav > ul.pagination > li.active > a {
+  color: var(--background-color);
+  background: var(--lighter-red-color) !important;
+  background-color: var(--lighter-red-color) !important;
+}
+
+/* Publications */
+
+.pub-banner {
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pub .pub-content {
+    padding-top: 1rem;
+}
+
+.pub .pub-info {
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--blue-color);
+}
+
+.pub .pub-authors {
+    font-style: italic;
+    line-height: 30px; /* Match share bar line height. */
+}
+
+.pub .pub-row-heading {
+    font-weight: bold;
+}
+
+ /* Publication links */
+ .pub .button.hollow.primary {
+     padding: 0.35em 0.4em;
+     margin: 0.5rem 0;
+ }
+
+.pub-icon {
+  color:var(--blue-color);
+  font-size:80%;
+  padding-top:0.1rem;
+}
+
+sup.pub-title {
+  vertical-align: top;
+}
+
+.pub-title::before {
+  content: open-quote;
+}
+
+.pub-title::after {
+  content: close-quote;
+}
+
+.pub-book-title {
+  font-style: italic;
+}
+
+.pub-volume {
+  
+}
+
+ /* Labels */
+ .label,
+ .badge {
+   background: var(--grey-color);
+   font-size: 12.75px;
+   display: inline-block;
+   line-height: 1;
+   padding: 4px 7px 4px 7px;
+   color: var(--text-color);
+   text-align: center;
+   font-weight: normal;
+   text-transform: uppercase;
+   text-indent: 0;
+ }
+ .label-outline {
+   background: none;
+   border: 1px solid var(--text-color);
+   padding: 3px 6px 2px 6px;
+ }
+ .badge {
+   border-radius: 15px;
+ }
+ .badge-small {
+   font-size: 11.25px;
+   padding: 4px 5px 4px 5px;
+ }
+ .label-black,
+ .label-blue,
+ .label-red,
+ .label-green,
+ .badge-black,
+ .badge-blue,
+ .badge-red,
+ .badge-green,
+ .badge-doi,
+ .badge-ssrn,
+ .badge-url,
+ .badge-preprint,
+ .badge-pdf
+  {
+   color: var(--background-color);
+ }
+ .label-black,
+ .badge-black {
+   background: var(--text-color);
+ }
+ .label-blue,
+ .badge-blue {
+   background: var(--blue-color);
+ }
+ .label-red,
+ .badge-red {
+   background: var(--red-color);
+ }
+ .label-green,
+ .badge-green {
+   background: var(--green-color);
+ }
+ .label-yellow,
+ .badge-yellow {
+   background: var(--yellow-color);
+ }
+ .label-white,
+ .badge-white {
+   background: #ffffff;
+ }
+ .label-black.label-outline,
+ .label-blue.label-outline,
+ .label-red.label-outline,
+ .label-green.label-outline,
+ .label-yellow.label-outline,
+ .label-white.label-outline {
+   background: none;
+   color: var(--grey-color);
+ }
+ .label-blue.label-outline {
+   border-color: var(--lighter-blue-color);
+   color: var(--lighter-blue-color);
+ }
+ .label-red.label-outline {
+   border-color: var(--lighter-red-color);
+   color: var(--lighter-red-color);
+ }
+ .label-green.label-outline {
+   border-color: var(--lighter-green-color);
+   color: var(--lighter-green-color);
+ }
+ .label-yellow.label-outline {
+   border-color: var(--lighter-yellow-color);
+   color: var(--lighter-yellow-color);
+ }
+ .label-white.label-outline {
+   border-color: #ffffff;
+   color: #ffffff;
+ }
+
+ .label.now-on,
+ .badge.now-on {
+   background: var(--green-color);
+   text-transform: uppercase;
+  }
+ .label.coming-soon,
+ .badge.coming-soon,
+ .label.in-press,
+ .badge.in-press {
+   background: var(--orange-color);
+   text-transform: uppercase;
+  }
+
+ .label.in-review,
+ .badge.in-review {
+   background: var(--yellow-color);
+   text-transform: uppercase;
+  }
+  .label.pdf,
+  .badge.pdf {
+   color: #FFFFFF;
+   background: var(--red-color);
+  }
+  .label.doi,
+  .badge.doi,
+  .label.ssrn,
+  .badge.ssrn,
+  .label.patent,
+  .badge.patent,
+  .label.preprint-link,
+  .badge.preprint-link,
+    label.issn, label.isbn {
+    color: #FFFFFF;
+    background: var(--blue-color);
+  }
+
+  .label.url,
+  .badge.url {
+    background: var(--orange-color);
+    color: #fff;
+  }
+
+  .label.amazon,
+  .badge.amazon {
+    background: var(--yellow-color);
+    color: black;
+  }
+
+  .label.abstract-link,
+  .badge.abstract-link {
+    background: var(--grey-color);
+  }
+
+
+/* AMS Math-like environments */
+/* Courtesy of Z. T. Harmany: http://drz.ac/2013/01/17/latex-theorem-like-environments-for-the-web/ */
+
+.theorem {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.theorem:before {
+    content: "Theorem.";
+    font-weight: bold;
+    font-style: normal;
+}
+.lemma {
+    display: block;
+    margin: 12px 0;
+    font-style: italic;
+}
+.lemma:before {
+    content: "Lemma.";
+    font-weight: bold;
+    font-style: normal;
+}
+.proof {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.proof:before {
+    content: "Proof.";
+    font-style: italic;
+}
+.proof:after {
+    content: "\25FB";
+    float:right;
+}
+.definition {
+    display: block;
+    margin: 12px 0;
+    font-style: normal;
+}
+.definition:before {
+    content: "Definition.";
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Navbar */
+.navbar {
+  font-family: "Ubuntu", sans-serif;
+  text-transform: uppercase;
+  font-size: 15pt;
+  border-color: transparent;
+}
+.navbar ul {
+  font-size: 11pt;
+}
+.navbar-default {
+  background-color: var(--blue-color);
+  border-color: var(--blue-color);
+}
+.navbar-default .navbar-brand {
+  color: var(--background-color);
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: var(--lighter-red-color);
+}
+.navbar-default .navbar-text {
+  color: var(--background-color);
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: var(--background-color);
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: var(--lighter-red-color);
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: var(--lighter-red-color);
+  background-color: var(--blue-color);
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+  color: var(--lighter-red-color);
+  background-color: var(--blue-color);
+}
+.navbar-default .navbar-toggle {
+  border-color: var(--blue-color);
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: var(--blue-color);
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: var(--background-color);
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: var(--background-color);
+}
+.navbar-default .navbar-link {
+  color: var(--background-color);
+}
+.navbar-default .navbar-link:hover {
+  color: var(--lighter-red-color);
+}
+
+
+/*
+    TABLES
+*/
+
+tbody{
+  display:table-row-group
+}
+
+tfoot{
+  display:table-footer-group
+}
+table{
+  margin-bottom:2em;
+  font-size: 0.8em;
+  padding:0;
+  border-collapse:collapse;
+  -webkit-box-shadow:1px 1px 2px rgba(0,0,0,.35);
+  width:95%;
+  margin:0 auto 2em auto
+}
+table th,table td{
+  padding:10px 10px 9px;
+  line-height:18px;
+  text-align:left
+}
+table th{
+  padding-top:9px;
+  !important;
+  text-transform:uppercase;
+  vertical-align:middle
+}
+table td{
+  vertical-align:top;
+  border-top:1px solid #ddd;
+}
+table tbody th{
+  border-top:1px solid #ddd;
+  vertical-align:top
+}
+table{
+  border:1px solid #ddd;
+  border-collapse:separate;
+  *border-collapse:collapse;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius:4px
+}
+table th+th,table td+td,table th+td{
+  border-left:1px solid #ddd
+}
+table thead tr:first-child th:first-child,table tbody tr:first-child td:first-child{
+  -webkit-border-radius:4px 0 0 0;
+  -moz-border-radius:4px 0 0 0;
+  border-radius:4px 0 0 0
+}
+table thead tr:first-child th:last-child,table tbody tr:first-child td:last-child{
+  -webkit-border-radius:0 4px 0 0;
+  -moz-border-radius:0 4px 0 0;
+  border-radius:0 4px 0 0
+}
+table tbody tr:last-child td:first-child{
+  -webkit-border-radius:0 0 0 4px;
+  -moz-border-radius:0 0 0 4px;
+  border-radius:0 0 0 4px
+}
+table tbody tr:last-child td:last-child{
+  -webkit-border-radius:0 0 4px 0;
+  -moz-border-radius:0 0 4px 0;
+  border-radius:0 0 4px 0
+}
+tbody tr:nth-child(odd){
+  background-color:rgba(0,0,0,0.03)
+}
+caption{
+  display:table-caption;
+  font-weight:300;
+  font-size:1.3em;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  word-spacing:.2em;
+  background:rgba(0,0,0,.75);
+  color:#EEE;
+  padding:4px;
+  -webkit-border-radius:4px;
+  margin:4px 0;
+  -webkit-box-shadow:2px 2px 2px rgba(0,0,0,.35)
+}
