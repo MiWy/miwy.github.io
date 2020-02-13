@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Alegreya:400,500,700|Roboto+Slab:300|Ubuntu:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alegreya:400,500,700|Ubuntu:500&display=swap');
 /* Color scheme variables */
 
 :root {
   --red-color: #AD2A1A;
-  --lighter-red-color: #C02F1D;
+  --lighter-red-color: #d46153;
   --green-color: #93A661;
   --lighter-green-color: #A3B86C;
   --orange-color: #DA621E;
@@ -58,8 +58,9 @@ h1, h2, h3, h4  {
   letter-spacing: .01em;
 }
 .area-header {
-  font-family: "Roboto Slab", serif;
+  font-family: "Alegreya", serif;
   font-weight: normal;  
+  font-size: 3rem;
   letter-spacing: 0rem;
 }
 
@@ -111,8 +112,8 @@ img {
 
 .more-link {
   font-size: .75em;
-  font-weight: bold;
-  font-family: "Roboto Slab";
+  font-weight: normal;
+  font-family: "Alegreya";
   letter-spacing: 1px;
 }
 

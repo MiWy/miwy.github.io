@@ -1,0 +1,930 @@
+/*************************************************
+ *  Custom stylings
+ *  Author: Jonathan Gilligan
+ *  Date: 18 June 2017
+ **************************************************/
+
+ /* color:#101730; color:#03396c; */
+
+ /* Prevent flashing of responsive sandwich button on page load.  */
+ .no-js .top-bar { display: none; }
+ @media screen and (min-width: 40em) {
+     .no-js .top-bar { display: block; }
+     .no-js .title-bar { display: none; }
+ }
+
+/* Basic default styling, taken from kube.css */
+ html,
+ body,
+ div,
+ span,
+ object,
+ iframe,
+ p,
+ blockquote,
+ pre,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ b,
+ u,
+ i,
+ center,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ label,
+ legend,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ canvas,
+ details,
+ embed,
+ figure,
+ figcaption,
+ footer,
+ header,
+ hgroup,
+ menu,
+ nav,
+ output,
+ ruby,
+ section,
+ summary,
+ time,
+ mark,
+ audio,
+ video,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   outline: 0;
+   font-size: 100%;
+   vertical-align: baseline;
+   background: transparent;
+ }
+
+
+ /* Basic colors and fonts.  */
+ body {
+  font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, Serif;
+ 	font-size: 1.05em;
+ 	line-height: 1.6em;
+ 	background-color: #faf8f8;
+ }
+
+p {
+  font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, Serif;
+  font-size: 100%;
+  line-height: 1.6em;
+  text-indent:0;
+}
+
+p:first-child
+p:first-of-type {
+  text-indent: 0;
+}
+
+p+p {
+  text-indent: 1em;
+}
+
+ /* Title and top bar navigation.  */
+ .site-hamburger {
+     position: relative;
+     top: 1px;
+     margin-left: 0.5rem;
+     cursor: pointer;
+ }
+
+button {
+  font-family: 'ff-tisa-web-pro', Georgia, 'Times New Roman', Times, Serif;
+}
+
+.row {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    max-width: 100%;
+}
+
+
+ .nav-bar {
+     font-family: 'ff-meta-serif-web-pro', 'Trebuchet MS', 'Helvetica Neue', Tahoma;
+     text-transform: capitalize;
+     font-variant: small-caps;
+     font-style: normal;
+     font-weight: normal;
+ }
+
+.nav-bar.more {
+  text-transform: lowercase;
+}
+
+a.nav-bar.more {
+  color: #6060A0;
+  border: none;
+}
+
+a.nav-bar.more:hover {
+   color: #e82121;
+  /* color: #6060F0; */
+}
+
+ .top-bar,
+ .title-bar,
+ .nav-bar button,
+ .nav-bar a,
+ .nav-bar ul {
+     background-color: #101730;
+     color: #faf8f8;
+     border: none;
+ }
+
+.button  {
+  color: #4133ff;
+  background-color:  #c0d0f0;
+}
+
+.button:hover {
+  background-color: #c0dfff;
+
+}
+
+.button a {
+  border: none;
+}
+
+ .nav-bar button:hover,
+ .nav-bar a:hover,
+ {
+     color: #2199e8;
+ }
+
+ .site-title {
+     padding: 0.7rem 0.8rem;
+     font-weight: bold;
+     line-height: 1;
+     letter-spacing: 0.05em;
+ }
+
+
+ /* Last footer.  */
+ .endofpage {
+     /* background-image: url("/img/wave.png"); */
+     color: #faf8f8;
+     background-color: #101730;
+     height: 50px;
+     background-repeat: repeat-x;
+     margin-top: 3ex;
+     font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    width:100%;
+ }
+
+.endofpage a {
+  color: #b3cde0;
+  border: none;
+}
+
+.endofpage a:hover {
+  color: #70C0FF;
+  border: none;
+}
+
+ /* Main content.  */
+ main {
+     margin-top: 2ex;
+ }
+
+ a {
+     border-bottom: 1px dotted #5073F0;
+     border-radius: 3px;
+     color: #24648f;
+     /*
+     color: #101730;
+     */
+     /*
+     color: #2e81b8;
+     */
+ }
+
+ a:hover,
+ a:focus {
+    text-decoration:none;
+    color: #e82121;
+    border-color: #e82121;
+    /*
+    color: #6060F0
+    border-bottom: dotted 1px #6060F0;
+    */
+}
+
+ h1, h2, h3, h4, h5, h6 {
+   font-family: 'ff-tisa-web-pro', 'Trebuchet MS', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+ 	font-style: italic;
+ 	color: #36454f;
+ }
+ h4, h5 {
+   text-transform: uppercase;
+ }
+ h2, h3, h4, h5 {
+ 	font-weight: normal;
+ 	font-style: italic;
+ }
+ h3,h4 {
+   font-family: 'ff-meta-serif-web-pro', 'Trebuchet MS', 'Helvetica Neue', Tahoma;
+   text-transform: lowercase;
+   font-style: normal;
+   font-variant: small-caps;
+ }
+ h3 {
+   font-weight: bold;
+ }
+
+ p~h3 {
+   margin-top:0.5em;
+   margin-bottom:0.3em;
+ }
+
+ h1, h2 {
+   font-family: 'ff-meta-web-pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+   font-weight: 600;
+   test-transform: initial;
+   margin-top: 0.5em;
+   margin-bottom: 0.25em;
+ }
+
+sup, sub {
+  font-size:50%;
+}
+
+ @media screen and (min-width: 40em) {
+     h1 { font-size: 1.5rem; }
+     h2 { font-size: 1.25rem; }
+     h3 { font-size: 1.1875rem; }
+     h4 { font-size: 1.125rem; }
+     h5 { font-size: 1.0625rem; }
+     h6 { font-size: 1rem; }
+ }
+
+ ul.inside-list,
+ ol.inside-list {
+   list-style-position:inside;
+   margin-bottom:1em;
+ }
+
+i.teaching-item {
+  color:#03396c;
+  font-size:80%;
+  padding-top:6px;
+}
+
+p.caption {
+  background-color: #e2edf5;
+  padding-top:0.25rem;
+  padding-bottom:0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+footer.footer {
+  display:flex;
+  width:100%;
+  text-align:center;
+  align-items:center;
+}
+
+ /* Code highlighting: Inline code.  */
+ code
+ {
+     /* For non-JS users we repeat color here.  */
+     font-family: PragmataPro, Menlo, Monaco, "Andale Mono", "Lucida Console", "Courier New", monospace;
+     font-size: 90%;
+     color: #101730;
+     background-color: #e8e0f0;
+     border: none;
+     padding-left: 0.3em;
+     padding-right: 0.3em;
+ }
+
+ /* Code highlighting: Code block.  */
+ pre > code {
+     font-family: PragmataPro, Menlo, Monaco, "Andale Mono", "Lucida Console", "Courier New", monospace;
+     font-size: 90%;
+     /* background-color: transparent; */
+     border: none;
+     overflow: auto;
+     padding: 0px;
+     /* font-size: 90%; */
+     border-radius: 2px;
+     white-space:pre-wrap;
+ }
+
+ pre {
+     margin: 0 0 16px 0;
+     border-left: 1px dashed #2199e8;
+     padding-left: 1em;
+ }
+
+ .hljs
+ {
+     /* background-color: #f2f0f0; */
+     /* background-color: transparent; */
+     /* color: #101730; */
+     padding: 0;
+     margin-top:0.25rem;
+     margin-bottom:0.25rem;
+ }
+
+ .button {
+     border-radius: 3px;
+ }
+
+ .nowrap {
+     white-space: nowrap;
+ }
+
+ .capitalize {
+     text-transform: capitalize;
+ }
+
+ .full-figure {
+     margin: 0;
+ }
+
+ .avatar {
+   -webkit-border-radius: 50em;
+   -moz-border-radius: 50em;
+   border-radius: 50em;
+ }
+
+ .image-left {
+   float: left;
+   margin: 0 1em 1em 0;
+ }
+
+ /* Default footer.  */
+ .whatisthis hr {
+     border-style: solid;
+     border-color: #101730;
+ }
+
+ /* Taxonomy terms page.  */
+ ul.taxonomy-terms {
+     margin-left: 0;
+     list-style-type: none;
+ }
+
+ .taxonomy-terms li {
+     display: inline;
+ }
+
+ .taxonomy-terms li::after {
+     content: ",";
+ }
+ .taxonomy-terms li:last-child::after {
+     content: "";
+ }
+
+ .taxonomy-terms a
+ {
+     border: none;
+ }
+
+ /* Support for other pages.  */
+ .pagination {
+     font-size: small;
+ }
+
+ .pagination a {
+     border: none;
+     /* Mh. Is this correct? */
+     padding-bottom: 1px;
+ }
+
+ .pagination a:hover {
+     background-color: transparent;
+     border-bottom: 1px dotted #2199e8;
+     /* Mh. Is this correct? */
+     padding-bottom: 0px;
+ }
+
+
+
+ /* Publication links on front page and on publication pages. */
+
+.button.coming-soon,
+.button.in-press {
+  background-color: #f0f000;
+  border: 0;
+  padding: 3px 5px;
+  vertical-align: baseline;
+  color: #101730;
+  transition: none;
+  padding: 3px 5px;
+  border-radius: 15px;
+  margin: 0 0 0.5rem 0;
+}
+
+.button.coming-soon:hover
+.button.in-press:hover {
+    color: #de2c3b;
+    transition: none;
+}
+
+.button.in-press {
+  text-transform: uppercasae;
+}
+
+.button.now-on {
+  background-color: #a0f0a0;
+  border: 0;
+  padding: 3px 5px;
+  vertical-align: baseline;
+  color: #101730;
+  transition: none;
+  padding: 3px 5px;
+  border-radius: 15px;
+  margin: 0 0 0.5rem 0;
+}
+
+.button.now-on:hover {
+    color: #de2c3b;
+    transition: none;
+}
+
+
+.button.pub-link {
+  background-color: #e0e3e5;
+  border: 0;
+  padding: 3px 5px;
+  border-radius: 15px;
+  vertical-align: baseline;
+}
+
+
+ .button.hollow.pub-link {
+     padding: 0.05em 0.05em;
+     background-color: #e0e3e5;
+     color: #101730;
+     transition: none;
+     padding: 3px 5px;
+     border-radius: 15px;
+     margin: 0 0 0.5rem 0;
+ }
+
+ .button.hollow.pub-link:hover {
+     color: #de2c3b;
+     transition: none;
+ }
+
+ .button.hollow.primary {
+     text-transform: uppercase;
+     border: 1px solid #101730;
+     color: #101730;
+     transition: none;
+ }
+
+ .button.hollow.primary:hover {
+     color: #2199e8;
+     border-color: #2199e8;
+     transition: none;
+ }
+
+
+ /**************************************************
+  *  Publications
+  **************************************************/
+
+ .pub-banner {
+     max-width: 100%;
+     height: auto;
+     margin-left: auto;
+     margin-right: auto;
+ }
+
+ .pub .pub-content {
+     padding-top: 1rem;
+ }
+
+ .pub .pub-info {
+     padding-left: 0.5rem;
+     border-left: 3px solid #2199e8;
+ }
+
+ .pub .pub-authors {
+     font-style: italic;
+     line-height: 30px; /* Match share bar line height. */
+ }
+
+ .pub .pub-row-heading {
+     font-weight: bold;
+ }
+
+ /* Publication links */
+ .pub .button.hollow.primary {
+     padding: 0.35em 0.4em;
+     margin: 0.5rem 0;
+ }
+
+.pub-icon {
+  color:#03396c;
+  font-size:80%;
+  padding-top:0.1rem;
+}
+
+sup.pub-title {
+  vertical-align: top;
+}
+
+.pub-title::before {
+  content: open-quote;
+}
+
+.pub-title::after {
+  content: close-quote;
+}
+
+.pub-book-title {
+  font-style: italic;
+}
+
+.pub-volume {
+  font-weight: bold;
+}
+
+
+ /*************************************************
+  *  Sharing
+  **************************************************/
+
+ .share-box {
+     margin-top: 3px;
+     padding-right: 1rem;
+ }
+
+ .share-box ul.share {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+
+ .share-box ul.share li {
+     display: inline-flex;
+     margin-right: 5px;
+ }
+
+ .share-box ul.share li:last-of-type {
+     margin-right: 0;
+ }
+
+ .share-box ul.share li .fa {
+     display: block;
+     width: 30px;
+     height: 30px;
+     line-height: 30px;
+     font-size: 16px;
+     text-align: center;
+     transition: all 150ms ease-in-out;
+     color: #faf8f8;
+ }
+
+ .share-box ul.share li a {
+     display: block;
+     border: 1px solid #2199e8;
+     border-radius: 10%;
+     background-color: #2199e8;
+     text-decoration: none !important;
+     margin: 0;
+ }
+
+ .share-box ul.share li:hover .fa {
+     transform: scale(1.4);
+     color: #1585cf;
+ }
+
+
+ /*************************************************
+  *  Blog Posts
+  **************************************************/
+
+ .post-metadata {
+     color: #606090;
+     margin-bottom: 0.25rem;
+     font-size: small;
+ }
+
+ .post-dateblock {
+   color: #606090;
+   margin-bottom: 1rem;
+ }
+
+ .post-byline {
+   color: #606090;
+   margin-bottom: 0.5rem;
+ }
+
+ .post-pub-url {
+   font-size:80%;
+ }
+
+ .post-metadata .post-pub-url {
+   font-size:100%;
+ }
+
+ .post-byline a,
+ .post-dateblock a,
+ .post-metadata a {
+     color: #6060A0;
+     border: none;
+ }
+
+ .post-byline a:hover,
+ .post-dateblock a:hover,
+ .post-metadata a:hover {
+   color: #e82121;
+ }
+
+ .post-date {
+     font-style: italic;
+     margin-right: 1em;
+ }
+
+.post-tags {
+  font-style: italic;
+  margin-right: 1em;
+  font-size: small;
+}
+
+ /*  -----------------------------------------------------------------------------
+     =Layout
+     -----------------------------------------------------------------------------*/
+
+ .wrapper {
+ 	padding: 0 10px;
+ 	width: 94%;
+ 	max-width: 1300px;
+ 	margin: auto;
+ }
+ #outer {
+ 	padding: 3em 0 1em 0;
+ 	margin: 1em 0 3em 0;
+ 	background: url(hero-image1.jpg) #282828;
+ 	background-size: cover;
+ 	background-position: 50% 50%;
+ 	box-shadow: 0 0 3px #333 inset;
+ /*	border: 1px solid #000; */
+ 	color: #f2f2f2;
+ 	height: 200px;
+ }
+ #outer h2,
+ #outer h3 {
+ 	color: #ccc;
+ }
+
+ #topbar {
+ 	background: #536878;
+ 	padding:0px;
+ 	margin:0ex;
+ 	/* border-bottom: 3px solid #36454f; */
+ }
+ #midbar {
+ 	background: #eaa;
+ 	padding:0px;
+ 	margin:0ex;
+ 	/* border-bottom: 3px solid #36454f; */
+ }
+
+ #topbar .navbar {padding-bottom:14px; font-size:120%;}
+ #topbar li a {color: #fff; border-bottom: none;}
+ #topbar li a {color: #b3cde0;}
+ #topbar li span a {color: #fff;}
+
+ /* =Labels
+ -----------------------------------------------------------------------------*/
+ .label,
+ .badge {
+   background: #e0e3e5;
+   font-size: 12.75px;
+   display: inline-block;
+   line-height: 1;
+   padding: 4px 7px 4px 7px;
+   color: #0f0f0f;
+   text-align: center;
+   font-weight: normal;
+   text-transform: uppercase;
+   text-indent: 0;
+ }
+ .label-outline {
+   background: none;
+   border: 1px solid #0f0f0f;
+   padding: 3px 6px 2px 6px;
+ }
+ .badge {
+   border-radius: 15px;
+ }
+ .badge-small {
+   font-size: 11.25px;
+   padding: 4px 5px 4px 5px;
+ }
+ .label-black,
+ .label-blue,
+ .label-red,
+ .label-green,
+ .badge-black,
+ .badge-blue,
+ .badge-red,
+ .badge-green,
+ .badge-doi,
+ .badge-ssrn,
+ .badge-url,
+ .badge-preprint,
+ .badge-pdf,
+  {
+   color: #ffffff;
+ }
+ .label-black,
+ .badge-black {
+   background: #0f0f0f;
+ }
+ .label-blue,
+ .badge-blue {
+   background: #4673B8;
+ }
+ .label-red,
+ .badge-red {
+   background: #BD666D;
+ }
+ .label-green,
+ .badge-green {
+   background: #2c9f42;
+ }
+ .label-yellow,
+ .badge-yellow {
+   background: #ffc800;
+ }
+ .label-white,
+ .badge-white {
+   background: #ffffff;
+ }
+ .label-black.label-outline,
+ .label-blue.label-outline,
+ .label-red.label-outline,
+ .label-green.label-outline,
+ .label-yellow.label-outline,
+ .label-white.label-outline {
+   background: none;
+   color: #0f0f0f;
+ }
+ .label-blue.label-outline {
+   border-color: #2575ed;
+   color: #2575ed;
+ }
+ .label-red.label-outline {
+   border-color: #de2c3b;
+   color: #de2c3b;
+ }
+ .label-green.label-outline {
+   border-color: #2c9f42;
+   color: #2c9f42;
+ }
+ .label-yellow.label-outline {
+   border-color: #ffc800;
+   color: #ffc800;
+ }
+ .label-white.label-outline {
+   border-color: #ffffff;
+   color: #ffffff;
+ }
+
+ .label.now-on,
+ .badge.now-on {
+   background: #a0f0a0;
+   text-transform: uppercase;
+  }
+ .label.coming-soon,
+ .badge.coming-soon,
+ .label.in-press,
+ .badge.in-press {
+   background: #f0f000;
+   text-transform: uppercase;
+  }
+  .label.pdf,
+  .badge.pdf {
+   color: #FFFFFF;
+   background: #BD666D;
+  }
+  .label.doi,
+  .badge.doi,
+  .label.ssrn,
+  .badge.ssrn,
+  .label.patent,
+  .badge.patent,
+  .label.url,
+  .badge.url,
+  .label.preprint-link,
+  .badge.preprint-link {
+    color: #FFFFFF;
+    background: #4673B8;
+  }
+
+  .label.amazon,
+  .badge.amazon {
+    background: #febd69;
+    color: black;
+  }
+
+  .label.abstract-link,
+  .badge.abstract-link {
+    background: #e0e3e5;
+  }
+
+  blockquote {
+    color: #36454f;
+    background: #e9e9e9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-style: italic;
+  }
+
+  blockquote p {
+    color: #36454f;
+  }
+
+  blockquote:before {
+    color: #aaa;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  div.image-credit {
+    text-align: right;
+    margin-top:0;
+    padding:0;
+  }
+
+  img.article-banner {
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+
+  .image-credit span,
+  .image-credit p {
+    margin-top:0;
+    padding:0;
+    text-align:right;
+    font-size:80%;
+    color: #808080;
+  }
+
+article.inline {
+  display: inline;
+}
+
