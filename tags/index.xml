@@ -1,33 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Tags on Michał Wyrwa</title>
-    <link>https://miwy.github.io/tags/</link>
-    <description>Recent content in Tags on Michał Wyrwa</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <copyright>&amp;copy; 2019 Michał Wyrwa</copyright>
-    <lastBuildDate>Sat, 08 Jun 2019 11:02:00 -0400</lastBuildDate>
-    
-	<atom:link href="https://miwy.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>workflow</title>
-      <link>https://miwy.github.io/tags/workflow/</link>
-      <pubDate>Sat, 08 Jun 2019 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/tags/workflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>coding</title>
-      <link>https://miwy.github.io/tags/coding/</link>
-      <pubDate>Sun, 29 Apr 2018 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/tags/coding/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Michał Wyrwa</title>
+        <link>https://michalwyrwa.org/tags/</link>
+        <description>Tags - Tag - Michał Wyrwa</description>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><atom:link href="https://michalwyrwa.org/tags/" rel="self" type="application/rss+xml" /></channel>
 </rss>

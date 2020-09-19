@@ -1,263 +1,86 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Michał Wyrwa</title>
-    <link>https://miwy.github.io/</link>
-    <description>Recent content on Michał Wyrwa</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <copyright>&amp;copy; 2019 Michał Wyrwa</copyright>
-    <lastBuildDate>Sat, 01 Feb 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://miwy.github.io/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Philosophy of mind 2019/2020</title>
-      <link>https://miwy.github.io/teaching/fu/</link>
-      <pubDate>Sat, 01 Feb 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/fu/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Folk view of consciousness</title>
-      <link>https://miwy.github.io/publications/2019-folkview/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2019-folkview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Introduction to Cognitive Science 2019/2020</title>
-      <link>https://miwy.github.io/teaching/wdk/</link>
-      <pubDate>Sun, 01 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/wdk/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>There is no phenomenal consciousness in the English language</title>
-      <link>https://miwy.github.io/publications/2019-language/</link>
-      <pubDate>Wed, 21 Aug 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2019-language/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Writing workflow: Pandoc scripts</title>
-      <link>https://miwy.github.io/blog/2019-06-08-pandocscripts/</link>
-      <pubDate>Sat, 08 Jun 2019 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/blog/2019-06-08-pandocscripts/</guid>
-      <description>tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it Having an unobtrusive workflow is important.
-There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want .docx, others .tex or .pdfs, all complying with a set of strict formatting rules. Often enough a faithful conversion of .</description>
-    </item>
-    
-    <item>
-      <title>How do we attribute consciousness to others?</title>
-      <link>https://miwy.github.io/publications/2019-stance/</link>
-      <pubDate>Sun, 02 Jun 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2019-stance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Philosophy of mind 2018/2019</title>
-      <link>https://miwy.github.io/teaching/fu2019/</link>
-      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/fu2019/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Introduction to Cognitive Science 2018/2019</title>
-      <link>https://miwy.github.io/teaching/wdk2018/</link>
-      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/wdk2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Własna a cudza świadomość. Próba wyjścia z naukowego labiryntu świadomości na przykładzie filozofii eksperymentalnej</title>
-      <link>https://miwy.github.io/publications/2018-proba/</link>
-      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2018-proba/</guid>
-      <description>Niniejszy tekst prezentuje koncepcję nastawienia fenomenalnego, czyli mechanizmu przypisywania świadomych stanów mentalnych. Wyrasta ona z programu badawczego filozofii eksperymentalnej.</description>
-    </item>
-    
-    <item>
-      <title>Całość w edukacji to coś więcej niż suma szczegółów</title>
-      <link>https://miwy.github.io/publications/2018-edukacja/</link>
-      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2018-edukacja/</guid>
-      <description>Przemiany technologiczne i społeczne XXI wieku determinują ewolucję systemów oświatowych na świecie. Podstawowym celem zreformowanych szkół staje się kształtowanie kompetencji i umiejętności na potrzeby współczesnego społeczeństwa. Referat podejmuje próbę analizy różnych rozwiązań prak- tycznych, z jakimi autorzy opracowania spotkali się w praktyce. Opis i ocena metod stosowanych w bogatych krajach skandynawskich uzupełniona zostaje analizą pilotażowego programu reformowania szkół jezuickich w Hiszpanii. Jest to zestawienie celowe i zamierzone, akcentujące priorytet woli przemian wobec ograniczeń finansowo-organizacyjnych.</description>
-    </item>
-    
-    <item>
-      <title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit</title>
-      <link>https://miwy.github.io/blog/2018-04-29-viewmodel/</link>
-      <pubDate>Sun, 29 Apr 2018 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/blog/2018-04-29-viewmodel/</guid>
-      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Michał Wyrwa</title>
+        <link>https://michalwyrwa.org/</link>
+        <description>Michał Wyrwa</description>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</lastBuildDate>
+            <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Wstęp do kognitywistyki 2020/2021 (ćwiczenia)</title>
+    <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
+    <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Philosophy of mind 2019/2020</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <pubDate>Tue, 31 Dec 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Introduction to Cognitive Science 2019/2020</title>
+    <link>https://michalwyrwa.org/posts/teaching/wdk2019/</link>
+    <pubDate>Sun, 01 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/wdk2019/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Writing workflow: Pandoc scripts</title>
+    <link>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</link>
+    <pubDate>Sat, 08 Jun 2019 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</guid>
+    <description><![CDATA[tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it Having an unobtrusive workflow is important.
+There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want .docx, others .tex or .pdfs, all complying with a set of strict formatting rules. Often enough a faithful conversion of .]]></description>
+</item><item>
+    <title>Philosophy of mind 2018/2019</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu2019/</link>
+    <pubDate>Mon, 31 Dec 2018 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu2019/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Introduction to Cognitive Science 2018/2019</title>
+    <link>https://michalwyrwa.org/posts/teaching/wdk2018/</link>
+    <pubDate>Mon, 01 Oct 2018 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/wdk2018/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit</title>
+    <link>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</link>
+    <pubDate>Sun, 29 Apr 2018 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</guid>
+    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.
 Aplikacja wyglądać będzie tak:
 {: .align-center}
-Komponenty architektury Androida Architecture Components to biblioteki dla Androida, zaprezentowane przez Google na I/O &amp;lsquo;17.</description>
-    </item>
-    
-    <item>
-      <title>[OLD] SpotiBar: ANGULARJS</title>
-      <link>https://miwy.github.io/blog/2018-04-13-angularjs-spotibar/</link>
-      <pubDate>Fri, 13 Apr 2018 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/blog/2018-04-13-angularjs-spotibar/</guid>
-      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+Komponenty architektury Androida Architecture Components to biblioteki dla Androida, zaprezentowane przez Google na I/O &lsquo;17. Mają one ułatwić proces projektowania architektury aplikacji.]]></description>
+</item><item>
+    <title>[OLD] SpotiBar: ANGULARJS</title>
+    <link>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</link>
+    <pubDate>Fri, 13 Apr 2018 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</guid>
+    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 PART 1 Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.
-Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo Mnogości JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.</description>
-    </item>
-    
-    <item>
-      <title>Philosophy of mind 2017/2018</title>
-      <link>https://miwy.github.io/teaching/fu2018/</link>
-      <pubDate>Thu, 01 Feb 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/fu2018/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Information Technology 2017/2018</title>
-      <link>https://miwy.github.io/teaching/ti2017/</link>
-      <pubDate>Sun, 01 Oct 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/ti2017/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>[OLD] SpotiBar: Spotify &#43; Foobar</title>
-      <link>https://miwy.github.io/blog/2017-09-13-spotibar/</link>
-      <pubDate>Wed, 13 Sep 2017 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/blog/2017-09-13-spotibar/</guid>
-      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-SPOTIBAR Spotify zacząłem używać od momentu jak wprowadzili abonament w PLN. Kilka lat doświadczenia się zatem zebrało i choć bardzo sobie cenię tę usługę, to jest jedna rzecz, która mi strasznie w niej przeszkadza.
-{: .align-center}
-Od razu zaznaczę, że należę do grona ludzi, którzy trzymać swoją kolekcję muzyczną w ordnungu. Jak kupuję płytę CD, to znajduję dla niej miejsce na odpowiedniej półeczce, scrobbluję do last.</description>
-    </item>
-    
-    <item>
-      <title>[OLD] Java 101: Enum &#43; Servlets</title>
-      <link>https://miwy.github.io/blog/2017-07-06-enumsql/</link>
-      <pubDate>Thu, 06 Jul 2017 11:02:00 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/blog/2017-07-06-enumsql/</guid>
-      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-ENUM Typ enum, dodany w wersji 1.5, służy do definiowania stałych. Kiedy mamy z nim do czynienia, to wiemy że mamy do wyboru ograniczony zbiór możliwych opcji. Przykładowo, definiując enum poraRoku z góry wiemy, że będzie on przyjmować wartości jedynie spośród ZIMA, WIOSNA, LATO i JESIEN.
-Każdy enum domyślnie rozszerza klasę java.lang.Enum, dlatego nie może rozszerzać żadnej innej klasy.</description>
-    </item>
-    
-    <item>
-      <title>[OLD] Courier App for Android</title>
-      <link>https://miwy.github.io/blog/2017-05-17-android_courier_firebase/</link>
-      <pubDate>Wed, 17 May 2017 15:34:30 -0400</pubDate>
-      
-      <guid>https://miwy.github.io/blog/2017-05-17-android_courier_firebase/</guid>
-      <description>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-FIRST PART The idea for a courier app isn’t new. You can find countless examples on Google Play Store. But building one is actually quite handy exercise in integrating Android with Firebase services.
-In this series we will cover only parts of building the actual bike courier app. Focus will be on Firebase integration and also some design pattern strategies.</description>
-    </item>
-    
-    <item>
-      <title>Introduction to Philosophy 2016/2017</title>
-      <link>https://miwy.github.io/teaching/wdf2016/</link>
-      <pubDate>Sat, 01 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/wdf2016/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Information Technology 2015/2016</title>
-      <link>https://miwy.github.io/teaching/ti2015/</link>
-      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/ti2015/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Introduction to Philosophy 2015/2016</title>
-      <link>https://miwy.github.io/teaching/wdf2015/</link>
-      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/wdf2015/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Świadomość w kontekstach klinicznych. Zaburzenia, diagnostyka, problemy</title>
-      <link>https://miwy.github.io/publications/2015-mw-skfu/</link>
-      <pubDate>Tue, 30 Jun 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2015-mw-skfu/</guid>
-      <description>Celem artykułu jest dyskusja wybranych problemów związanych z diagnostyką globalnych zaburzeń świadomości. Pokazuje się, że jednym z zasadniczych źródeł trudności diagnostycznych, z którymi mierzą się lekarze monitorujący stan pacjentów jest złożoność takich globalnych zaburzeń. Ocena tych stanów u osób w śpiączce, stanie wegetatywnym czy minimalnych stanach świadomości ma również charakter globalny i składają się na nią charakterystyki kompetencji wykonawczych i poznawczych, takich jak uwaga, pamięć, integracja multisensoryczna, wypełnianie poleceń, czy język.</description>
-    </item>
-    
-    <item>
-      <title>Czytanie świadomości zaburzonej i niezaburzonej</title>
-      <link>https://miwy.github.io/publications/2015-mw-pfk/</link>
-      <pubDate>Sat, 25 Apr 2015 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2015-mw-pfk/</guid>
-      <description>Praca podejmuje problematykę przypisywania świadomości innym ludziom, jej celem jest artykulacja potencjalnych wyzwań dla przyszłych badań eksperymentalnych. Pomimo, że dla lekarzy codziennością jest behawioralne diagnozowanie osób z zaburzeniami świadomości, nie zostało dotąd rozpatrzone, czy podobnej atrybucji dokonujemy na co dzień. W pracy zarysowana jest teoria schematu procesów uwagowych M. Graziano oraz możliwe korelaty neuronalne mechanizmu czytania świadomości. W koncepcji Graziano świadomość ujmowana jest jako uboga reprezentacja procesów uwagowych. Wskazane są także potencjalne konteksty sytuacyjne, w których można szukać cech charakterystycznych dla świadomego zachowania.</description>
-    </item>
-    
-    <item>
-      <title>Information Technology  2014/2015</title>
-      <link>https://miwy.github.io/teaching/ti2014/</link>
-      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/ti2014/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Introduction to Logic 2014/2015</title>
-      <link>https://miwy.github.io/teaching/wdl2014/</link>
-      <pubDate>Wed, 01 Oct 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/teaching/wdl2014/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Świadomość minimalna w codziennych kontekstach</title>
-      <link>https://miwy.github.io/publications/2014-mw-pfk/</link>
-      <pubDate>Sat, 22 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2014-mw-pfk/</guid>
-      <description>Artykuł porusza zagadnienie dynamiki świadomości. Przypadek osób w śpiączce oraz znajdujących się w stanie wegetatywnym pokazuje, że poziom świadomości w sytuacjach patologicznych może ulegać zmianie. Nie ogranicza się ona do braku dostępu do określonych treści percepcyjnych, jak to ma miejsce przy agnozjach, lecz dotyka procesów odpowiadających za kontrolę działania, integrację informacji czy pamięć. Stawianą tezą jest dynamiczny charakter świadomości ludzkiej na co dzień. Będąc aktywnymi podmiotami w świecie nieustannie zwiększamy i zmniejszamy świadome zaangażowanie w podejmowanie działań i analizowanie dostępnych nam danych.</description>
-    </item>
-    
-    <item>
-      <title>Świadomość fenomenalna. Rozważania nad argumentem z pojmowalności</title>
-      <link>https://miwy.github.io/publications/2012-mw-preteksty/</link>
-      <pubDate>Sat, 30 Jun 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://miwy.github.io/publications/2012-mw-preteksty/</guid>
-      <description></description>
-    </item>
-    
-  </channel>
+Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo Mnogości JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.]]></description>
+</item><item>
+    <title>Philosophy of mind 2017/2018</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu2018/</link>
+    <pubDate>Sun, 31 Dec 2017 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu2018/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Information Technology 2017/2018</title>
+    <link>https://michalwyrwa.org/posts/teaching/ti2017/</link>
+    <pubDate>Sun, 01 Oct 2017 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/ti2017/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
 </rss>
