@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="pl-pl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>[OLD] Courier App for Android - Michał Wyrwa</title><meta name="Description" content=""><meta property="og:title" content="[OLD] Courier App for Android" />
+<meta property="og:description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+FIRST PART The idea for a courier app isn’t new. You can find countless examples on Google Play Store. But building one is actually quite handy exercise in integrating Android with Firebase services.
+In this series we will cover only parts of building the actual bike courier app. Focus will be on Firebase integration and also some design pattern strategies." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://michalwyrwa.org/posts/2017-05-17-android_courier_firebase/" />
+<meta property="article:published_time" content="2017-05-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2017-05-17T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[OLD] Courier App for Android"/>
+<meta name="twitter:description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
+FIRST PART The idea for a courier app isn’t new. You can find countless examples on Google Play Store. But building one is actually quite handy exercise in integrating Android with Firebase services.
+In this series we will cover only parts of building the actual bike courier app. Focus will be on Firebase integration and also some design pattern strategies."/>
+<meta name="application-name" content="Michał Wyrwa">
+<meta name="apple-mobile-web-app-title" content="Michał Wyrwa"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://michalwyrwa.org/posts/2017-05-17-android_courier_firebase/" /><link rel="prev" href="https://michalwyrwa.org/posts/teaching/wdf2016/" /><link rel="next" href="https://michalwyrwa.org/posts/2017-07-06-enumsql/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[OLD] Courier App for Android",
+        "inLanguage": "pl-pl",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/michalwyrwa.org\/posts\/2017-05-17-android_courier_firebase\/"
+        },"genre": "posts","wordcount":  2766 ,
+        "url": "https:\/\/michalwyrwa.org\/posts\/2017-05-17-android_courier_firebase\/","datePublished": "2017-05-17T00:00:00+00:00","dateModified": "2017-05-17T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "mw"},"author": {
+                "@type": "Person",
+                "name": "mw"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Michał Wyrwa">Michał Wyrwa</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/research/"><i class='fas fa-copy'></i> research </a><a class="menu-item" href="/categories/blog/"><i class='fas fa-quote-right'></i> blog </a><a class="menu-item" href="/categories/classes/"><i class='fas fa-user-graduate'></i> teaching </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Michał Wyrwa">Michał Wyrwa</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/research/" title=""><i class='fas fa-copy'></i>research</a><a class="menu-item" href="/categories/blog/" title=""><i class='fas fa-quote-right'></i>blog</a><a class="menu-item" href="/categories/classes/" title=""><i class='fas fa-user-graduate'></i>teaching</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">[OLD] Courier App for Android</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>mw</a></span>&nbsp;<span class="post-category">included in <a href="/categories/blog/"><i class="far fa-folder fa-fw"></i>blog</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="17170-09-58">17170-09-58</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2766 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;13 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#first-part">FIRST PART</a>
+          <ul>
+            <li><a href="#app-requirements--what-should-it-allow">App requirements – what should it allow</a></li>
+            <li><a href="#what-will-we-use-apis--software">What will we use? APIs &amp; software</a></li>
+            <li><a href="#how-will-it-look-in-the-end--source-code">How will it look in the end? – Source code</a></li>
+            <li><a href="#sidenote-">Sidenote !</a></li>
+          </ul>
+        </li>
+        <li><a href="#part-2-firebase">PART 2: Firebase</a>
+          <ul>
+            <li><a href="#what-is-firebase">What is Firebase</a></li>
+            <li><a href="#ok-so-how-do-i-connect-my-app-to-it">Ok, so how do I connect my app to it?</a></li>
+            <li><a href="#easier-way">Easier way</a></li>
+          </ul>
+        </li>
+        <li><a href="#part-3">PART 3</a>
+          <ul>
+            <li><a href="#do-we-needto-create-user-accounts">Do we need to create user accounts</a></li>
+            <li><a href="#what-will-we-use-needs-and-requirements">What will we use? Needs and requirements</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
+<h2 id="first-part">FIRST PART</h2>
+<p>The idea for a courier app isn’t new. You can find countless examples on Google Play Store. But building one is actually quite handy exercise in integrating Android with Firebase services.</p>
+<p>In this series we will cover only parts of building the actual bike courier app. Focus will be on Firebase integration and also some design pattern strategies. Android code can look really ugly really quick if you just put everything within your Activity class.</p>
+<h3 id="app-requirements--what-should-it-allow">App requirements – what should it allow</h3>
+<ul>
+<li>Register new users and log in already existing users.</li>
+<li>Place orders.</li>
+<li>Inform couriers that a new order is pending.</li>
+<li>Provide couriers with details on accepted order.</li>
+<li>Update customers on their order’s status with notifications.</li>
+<li>Access to order history.</li>
+<li>Some basic account informations and ability to edit those (i.e. change password or company name).</li>
+<li>Contact information for the company.</li>
+</ul>
+<h3 id="what-will-we-use-apis--software">What will we use? APIs &amp; software</h3>
+<p>We will use pretty much only Google APIs and services: Places, Maps, Firebase Authentication, Firebase Realtime Database and Firebase Cloud Functions.</p>
+<p>We will code in Android Studio (2.3.2 at the moment of writing this post).</p>
+<h3 id="how-will-it-look-in-the-end--source-code">How will it look in the end? – Source code</h3>
+<p>All of the code discussed in this series can be found on my <a href="https://github.com/MiWy/CourierApplication" target="_blank" rel="noopener noreffer">Github</a>.</p>
+<h3 id="sidenote-">Sidenote !</h3>
+<p>The code’s quality isn’t the best imaginable. I’m just a beginner as well, so there is a lot of room for optimisation. That being said, if you feel a little bit lost in dealing with official Android/Firebase documentation, or do not know what Firebase is, this series should be able to help you.</p>
+<h2 id="part-2-firebase">PART 2: Firebase</h2>
+<h3 id="what-is-firebase">What is Firebase</h3>
+<p>Firebase is a Google platform, a replacement to a traditional server-side solutions. With it, you don&rsquo;t have to own a server and you don&rsquo;t need to spend time configuring one from the scratch. If your needs are small enough, you don&rsquo;t even have to pay for it.</p>
+<p>Most apps nowadays need some sort of back-end. It wouldn&rsquo;t be wise to keep all of the users information only on his/hers phone or computer. How would you recover user email if needed? Actually, how else could you enable accounts at all in your app? Send notifications? A need for one central place to store data is pretty common.</p>
+<p>Firebase itself is more than just a database service. It can manage your users authentication process, database needs, notifications, custom node.js scripts, store user files, allows you to manage AdMob in your app, analyse user traffic and app usage, it pretty much functions like a ready-to-go server and cloud.</p>
+<p>Imagine you have a mobile app and a web app. To connect the two all you have to do is to pin both apps to the same Firebase project. The best part is you don&rsquo;t even need to know any SQL, PHP or other popular server-side languages. Firebase interface is &lsquo;clickable&rsquo;, so on the most part you will only have to write client-side code. At some point it will probably be better to learn some code, though. Especially if you would like to automate some processes like responding to some database events (NoSQL and node.js).</p>
+<h3 id="ok-so-how-do-i-connect-my-app-to-it">Ok, so how do I connect my app to it?</h3>
+<p>Easy-peasy. Go to <a href="https://firebase.google.com/" target="_blank" rel="noopener noreffer">firebase.google.com</a> and create an account. Then head over to Firebase Console and create a new project (you can attach multiple mobile/web apps to one project). Click <strong>Add Project</strong>:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-addproject.png"
+        data-srcset="/images/oldblog/firebase-addproject.png, /images/oldblog/firebase-addproject.png 1.5x, /images/oldblog/firebase-addproject.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-addproject.png"
+        title="image-center" />{: .align-center}</p>
+<p>When you created the project, click on Android icon to add your Android Studio app to your Firebase project:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-addapptoproject.png"
+        data-srcset="/images/oldblog/firebase-addapptoproject.png, /images/oldblog/firebase-addapptoproject.png 1.5x, /images/oldblog/firebase-addapptoproject.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-addapptoproject.png"
+        title="image-center" />{: .align-center}</p>
+<p>A window will pop up asking you for some information. At the <strong>Android package name</strong> enter the complete name of your app.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-addappindow.png"
+        data-srcset="/images/oldblog/firebase-addappindow.png, /images/oldblog/firebase-addappindow.png 1.5x, /images/oldblog/firebase-addappindow.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-addappindow.png"
+        title="image-center" />{: .align-center}</p>
+<p>For the third field you can provide your debug SHA-1 fingerprint (it allows you to use some of the Google Play Services like Google Sign-In). Getting that value can be easily achieved with command-line. For Linux/MacOs machines:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    keytool -exportcert -list -v \
+    -alias androiddebugkey -keystore ~/.android/debug.keystore
+</code></pre></td></tr></table>
+</div>
+</div><p>For Windows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    keytool -exportcert -list -v \
+    -alias androiddebugkey -keystore %USERPROFILE%\.android\debug.keystore
+</code></pre></td></tr></table>
+</div>
+</div><p>If you don&rsquo;t feel comfortable with command line, you can also click your way through to this value. Click following things in Android Studio and copy-paste SHA-1:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-androidstudiowindowsk.png"
+        data-srcset="/images/oldblog/firebase-androidstudiowindowsk.png, /images/oldblog/firebase-androidstudiowindowsk.png 1.5x, /images/oldblog/firebase-androidstudiowindowsk.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-androidstudiowindowsk.png"
+        title="image-center" />{: .align-center}</p>
+<p>When you filled fields click <strong>Register App</strong>. A .json file will be downloaded. You need to put this file into your project in the following place (you can do that by dragging it to the relevant place in Android Studio or simply by navigating to your project folder on the hard-drive and pasting at the right place):</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-astudiojson.png"
+        data-srcset="/images/oldblog/firebase-astudiojson.png, /images/oldblog/firebase-astudiojson.png 1.5x, /images/oldblog/firebase-astudiojson.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-astudiojson.png"
+        title="image-center" />{: .align-center}</p>
+<p>Remember to make sure that only you have access to <strong>google-services.json</strong> file, as it contains all necessary information for your app to connect to the Firebase. If you are publishing your code on your Github or somewhere else, do not upload this file.</p>
+<p>Lastly, you need to take care of dependencies. You have to edit two .gradle build files:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-dependencies.png"
+        data-srcset="/images/oldblog/firebase-dependencies.png, /images/oldblog/firebase-dependencies.png 1.5x, /images/oldblog/firebase-dependencies.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-dependencies.png"
+        title="image-center" />{: .align-center}</p>
+<p>In your project-level <strong>build.gradle</strong> add following line of code:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    buildscript {
+      dependencies {
+        classpath &#39;com.google.gms:google-services:3.0.0&#39;
+      }
+    }
+</code></pre></td></tr></table>
+</div>
+</div><p>In your app-level build.gradle add following line of code **at the bottom **of the file:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">    apply plugin: &#39;com.google.gms.google-services&#39;
+</code></pre></td></tr></table>
+</div>
+</div><p>When you edit either of the build.gradle files a information bar will appear in Android Studio telling you to sync your project. When you&rsquo;ve finished editing these files click on <strong>Sync now</strong> button:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase-astudiosync.png"
+        data-srcset="/images/oldblog/firebase-astudiosync.png, /images/oldblog/firebase-astudiosync.png 1.5x, /images/oldblog/firebase-astudiosync.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase-astudiosync.png"
+        title="image-center" />{: .align-center}</p>
+<p>There you go! You connected your app to Firebase project.</p>
+<h3 id="easier-way">Easier way</h3>
+<p>Described method is manual and can seem complicated at the beginning, but I strongly recommend you to at least use it once. Otherwise how will you know exactly which files need to be altered for you to be connected with Firebase?</p>
+<p>That being said there is also an easier way to connect your app. In Android Studio click on <strong>Tools &gt;</strong> **Firebase **and then expand one of the features in the newly opened **Assistant **window. Upon expanding click the <strong>Connect to Firebase</strong> button and follow instructions on the screen.</p>
+<h2 id="part-3">PART 3</h2>
+<h3 id="do-we-needto-create-user-accounts">Do we need to create user accounts</h3>
+<p>We want users of our app to be able to order bike courier services. Our customers will most likely be companies trying to transport documents from one place to the other. Not that a lot of individuals use this sort of service.</p>
+<p>It would be cumbersome for customers to provide all of the relevant data each time they place a new order, like their telephone number or e-mail address. So we should store that data once and reuse it.</p>
+<p>One way of doing this is to store data permanently in the user phone. However, information would be lost upon deleting app from the device. Heck, what if user switched his phone to a newer one? We need a solution independent from the user. We need back-end.</p>
+<h3 id="what-will-we-use-needs-and-requirements">What will we use? Needs and requirements</h3>
+<p>We will integrate Firebase Authentication and Firebase Realtime Database to our app.</p>
+<p>Create two activities: RegisterActivity and LoginActivity. Since user shouldn&rsquo;t see signup screen each time he/she opens the app, let&rsquo;s set AndroidManifest.xml file accordingly:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-XML" data-lang="XML">    <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&#34;.RegisterActivity&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+    <span class="nt">&lt;activity</span> <span class="na">android:name=</span><span class="s">&#34;.LoginActivity&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;intent-filter&gt;</span>
+    <span class="nt">&lt;action</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.action.MAIN&#34;</span><span class="nt">/&gt;</span>
+
+    <span class="nt">&lt;category</span> <span class="na">android:name=</span><span class="s">&#34;android.intent.category.LAUNCHER&#34;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/intent-filter&gt;</span>
+    <span class="nt">&lt;/activity&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This way LoginActivity will be loaded directly after launching the app. We don&rsquo;t cover the details of Activity creation here. Just make sure to provide user with EditViews and Buttons (or alternatives), so that there is a way for them to enter the information needed for signing up and signing in. The Activities can look something like this:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase3-loginscreen.png"
+        data-srcset="/images/oldblog/firebase3-loginscreen.png, /images/oldblog/firebase3-loginscreen.png 1.5x, /images/oldblog/firebase3-loginscreen.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase3-loginscreen.png"
+        title="image-center" />{: .align-center}</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase3-signupscreen.png"
+        data-srcset="/images/oldblog/firebase3-signupscreen.png, /images/oldblog/firebase3-signupscreen.png 1.5x, /images/oldblog/firebase3-signupscreen.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase3-signupscreen.png"
+        title="image-center" />{: .align-center}</p>
+<p>As you can see in RegisterActivity we have four EditText objects: one for e-mail, one for password, one for phone number and one for company name.
+First of all we should check whether user is already signed in (what&rsquo;s the point of signing up then?). To do that we need two class variables:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JAVA" data-lang="JAVA">    <span class="kd">private</span> <span class="n">FirebaseAuth</span> <span class="n">mAuth</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">FirebaseAuth</span><span class="o">.</span><span class="na">AuthStateListener</span> <span class="n">mAuthStateListener</span><span class="o">;</span>
+    <span class="o">(...)</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+      <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_register</span><span class="o">);</span>
+    
+      <span class="n">mAuth</span> <span class="o">=</span> <span class="n">FirebaseAuth</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+      <span class="c1">// Create an instance of AuthStateListener, which checks whether user is signed in
+</span><span class="c1"></span>      <span class="n">mAuthStateListener</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FirebaseAuth</span><span class="o">.</span><span class="na">AuthStateListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onAuthStateChanged</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">FirebaseAuth</span> <span class="n">firebaseAuth</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">FirebaseUser</span> <span class="n">user</span> <span class="o">=</span> <span class="n">firebaseAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">();</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">user</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="c1">// User is signed in. Go to MainActivity (we will discuss it in later posts)
+</span><span class="c1"></span>            <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+          <span class="c1">// User is signed out.
+</span><span class="c1"></span>          <span class="o">}</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>(&hellip;)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JAVA" data-lang="JAVA">    <span class="c1">// Add AuthStateListener to our main FirebaseAuth object at onStart and remove it at onStop().
+</span><span class="c1"></span>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStart</span><span class="o">()</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">onStart</span><span class="o">();</span>
+      <span class="n">mAuth</span><span class="o">.</span><span class="na">addAuthStateListener</span><span class="o">(</span><span class="n">mAuthStateListener</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStop</span><span class="o">()</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">onStop</span><span class="o">();</span>
+      <span class="n">mAuth</span><span class="o">.</span><span class="na">removeAuthStateListener</span><span class="o">(</span><span class="n">mAuthStateListener</span><span class="o">);</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+<<<<<<< HEAD
+</div><p>If you&rsquo;re unfamiliar with onStart() and onStop() method, check <a href="https://developer.android.com/guide/components/activities/activity-lifecycle.html" target="_blank" rel="noopener noreffer">this article</a> on Android activities lifecycle'.
+=======
+</div><p>If you&rsquo;re unfamiliar with onStart() and onStop() method, check <a href="https://developer.android.com/guide/components/activities/activity-lifecycle.html" target="_blank" rel="noopener noreffer">this article</a> on Android activities lifecycle&rsquo;.
+>>>>>>> 25716b46b03183761882404e34bbef92b9166eac
+Basically, if user is already signed in, the MainActivity will be loaded. We will discuss that activity in later posts. For now all we want is to prohibit users from creating an account when they&rsquo;re already have one.</p>
+<p>Ok, now to the actual signing up process.
+We have SignupButton view. Once it is clicked, assuming that every EditText field is filled, it&rsquo;s going to perform the actual signing process in Firebase.</p>
+<p>What&rsquo;s important to remember is that Firebase Authentication is a separate process from saving user&rsquo;s data to Firebase Database. First one requires FirebaseAuth.createUserWithEmailAndPassword(String email, String password) call, and the second requires reference to the database.
+Let&rsquo;s add that Button listener in our onCreate() method:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">private</span> <span class="n">ProgressDialog</span> <span class="n">mProgressDialog</span><span class="o">;</span>
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+      <span class="o">(...)</span>
+      <span class="n">mSignUpButton</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">registerUser</span><span class="o">();</span>
+        <span class="o">}</span>
+      <span class="o">});</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>(&hellip;)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">registerUser</span><span class="o">()</span> <span class="o">{</span>
+      <span class="c1">// Get Strings from EditTexts
+</span><span class="c1"></span>      <span class="kd">final</span> <span class="n">String</span> <span class="n">mEmail</span> <span class="o">=</span> <span class="n">mEditTextEmail</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+      <span class="kd">final</span> <span class="n">String</span> <span class="n">mPhone</span> <span class="o">=</span> <span class="n">mEditTextPhone</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+      <span class="kd">final</span> <span class="n">String</span> <span class="n">mName</span> <span class="o">=</span> <span class="n">mEditTextName</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+      <span class="n">String</span> <span class="n">mPass</span> <span class="o">=</span> <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+      <span class="c1">// Preliminary check for whether EditTexts weren&#39;t empty. If empty, show Toast to the user with information.
+</span><span class="c1"></span>      <span class="k">if</span><span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mEmail</span><span class="o">)){</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_hint_email</span><span class="o">),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mPass</span><span class="o">)){</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_hint_password</span><span class="o">),</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mPhone</span><span class="o">)</span> <span class="o">||</span> <span class="n">mPhone</span><span class="o">.</span><span class="na">length</span><span class="o">()&lt;</span><span class="n">9</span><span class="o">){</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">hint_phone</span><span class="o">),</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mName</span><span class="o">)){</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">hint_name</span><span class="o">),</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+
+      <span class="c1">// If the email and password are not empty
+</span><span class="c1"></span>      <span class="c1">// display a progress dialog to inform the user that his information is being saved in Firebase database
+</span><span class="c1"></span>      <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_progressbar_register</span><span class="o">));</span>
+      <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+
+      <span class="c1">//Create a new User in FirebaseAuth
+</span><span class="c1"></span>      <span class="n">mAuth</span><span class="o">.</span><span class="na">createUserWithEmailAndPassword</span><span class="o">(</span><span class="n">mEmail</span><span class="o">,</span> <span class="n">mPass</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addOnCompleteListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnCompleteListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Task</span> <span class="n">task</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isSuccessful</span><span class="o">())</span> <span class="o">{</span>
+            <span class="c1">// Grab a reference to the database (at this point we already 
+</span><span class="c1"></span>            <span class="c1">// have a user registered in Firebase Authentication part.
+</span><span class="c1"></span>            <span class="kd">final</span> <span class="n">DatabaseReference</span> <span class="n">mDatabaseReference</span> <span class="o">=</span> <span class="n">FirebaseDatabase</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">getReference</span><span class="o">();</span>
+
+            <span class="c1">// At the &#39;&#39;users&#39;&#39; node create new child with our new users&#39; 
+</span><span class="c1"></span>            <span class="c1">// UID (unique ID) and fill it with data provided by user in EditTexts
+</span><span class="c1"></span>            <span class="n">mDatabaseReference</span><span class="o">.</span><span class="na">child</span><span class="o">(</span><span class="s">&#34;users&#34;</span><span class="o">).</span><span class="na">child</span><span class="o">(</span><span class="n">mAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">().</span><span class="na">getUid</span><span class="o">())</span>
+              <span class="o">.</span><span class="na">addListenerForSingleValueEvent</span><span class="o">(</span><span class="k">new</span> <span class="n">ValueEventListener</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onDataChange</span><span class="o">(</span><span class="n">DataSnapshot</span> <span class="n">dataSnapshot</span><span class="o">)</span> <span class="o">{</span>
+                  <span class="n">User</span> <span class="n">mUser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">User</span><span class="o">();</span>
+                  <span class="n">mUser</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="n">mName</span><span class="o">);</span>
+                  <span class="n">mUser</span><span class="o">.</span><span class="na">setEmail</span><span class="o">(</span><span class="n">mEmail</span><span class="o">);</span>
+                  <span class="n">mUser</span><span class="o">.</span><span class="na">setRole</span><span class="o">(</span><span class="s">&#34;customer&#34;</span><span class="o">);</span>
+                  <span class="n">mUser</span><span class="o">.</span><span class="na">setPhone</span><span class="o">(</span><span class="n">mPhone</span><span class="o">);</span>
+                  <span class="n">mUser</span><span class="o">.</span><span class="na">setUid</span><span class="o">(</span><span class="n">mAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">().</span><span class="na">getUid</span><span class="o">());</span>
+                  <span class="n">mDatabaseReference</span><span class="o">.</span><span class="na">child</span><span class="o">(</span><span class="s">&#34;users&#34;</span><span class="o">).</span><span class="na">child</span><span class="o">(</span>
+                  <span class="n">mAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">().</span><span class="na">getUid</span><span class="o">())</span>
+                  <span class="o">.</span><span class="na">setValue</span><span class="o">(</span><span class="n">mUser</span><span class="o">);</span>
+                <span class="o">}</span>
+               <span class="nd">@Override</span>
+               <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onCancelled</span><span class="o">(</span><span class="n">DatabaseError</span> <span class="n">databaseError</span><span class="o">)</span> <span class="o">{</span>
+               <span class="o">}</span>
+             <span class="o">});</span>
+             <span class="c1">// Once finished start MainActivity (signing up process is done.
+</span><span class="c1"></span>             <span class="c1">// We have a new User in our Authentication part of Firebase and his details in Firebase Database.
+</span><span class="c1"></span>             <span class="n">finish</span><span class="o">();</span>
+             <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+          <span class="o">}</span>
+          <span class="c1">// Dismiss the progressDialog.
+</span><span class="c1"></span>          <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">dismiss</span><span class="o">();</span>
+          <span class="c1">// If for some reason signing up couldn&#39;t finish with success, catch 
+</span><span class="c1"></span>          <span class="c1">// exception and inform the user (i.e. when user&#39;s password was to weak).
+</span><span class="c1"></span>          <span class="k">if</span><span class="o">(!</span><span class="n">task</span><span class="o">.</span><span class="na">isSuccessful</span><span class="o">())</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+              <span class="k">throw</span> <span class="n">task</span><span class="o">.</span><span class="na">getException</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">FirebaseAuthWeakPasswordException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">setError</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_weak_password</span><span class="o">));</span>
+              <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
+            <span class="o">}</span> <span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+              <span class="k">if</span><span class="o">(</span><span class="n">e</span><span class="o">.</span><span class="na">toString</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">&#34;WEAK_PASSWORD&#34;</span><span class="o">))</span> <span class="o">{</span>
+              <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">setError</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_weak_password</span><span class="o">));</span>
+              <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
+              <span class="o">}</span>
+            <span class="o">}</span>
+          <span class="o">}</span>
+        <span class="o">}</span>
+      <span class="o">})</span>
+      <span class="o">.</span><span class="na">addOnFailureListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnFailureListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onFailure</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">e</span> <span class="k">instanceof</span> <span class="n">FirebaseAuthWeakPasswordException</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">setError</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_weak_password</span><span class="o">));</span>
+            <span class="n">mEditTextPassword</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">e</span> <span class="k">instanceof</span> <span class="n">FirebaseAuthInvalidCredentialsException</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mEditTextEmail</span><span class="o">.</span><span class="na">setError</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_bad_email</span><span class="o">));</span>
+            <span class="n">mEditTextEmail</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
+          <span class="o">}</span> <span class="k">else</span> <span class="k">if</span><span class="o">(</span><span class="n">e</span> <span class="k">instanceof</span> <span class="n">FirebaseAuthUserCollisionException</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mEditTextEmail</span><span class="o">.</span><span class="na">setError</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_user_exists</span><span class="o">));</span>
+            <span class="n">mEditTextEmail</span><span class="o">.</span><span class="na">requestFocus</span><span class="o">();</span>
+          <span class="o">}</span>
+          <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">dismiss</span><span class="o">();</span>
+        <span class="o">}</span>
+      <span class="o">});</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>FYI, User object is defined as followed:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mEmail</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mUid</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mName</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mPhone</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mRole</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mInstanceId</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">email</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">mEmail</span> <span class="o">=</span> <span class="n">email</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nf">User</span><span class="o">(</span><span class="n">String</span> <span class="n">email</span><span class="o">,</span> <span class="n">String</span> <span class="n">role</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">mEmail</span> <span class="o">=</span> <span class="n">email</span><span class="o">;</span>
+      <span class="k">this</span><span class="o">.</span><span class="na">mRole</span> <span class="o">=</span> <span class="n">role</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getEmail</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">mEmail</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getRole</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">mRole</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setEmail</span><span class="o">(</span><span class="n">String</span> <span class="n">email</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">mEmail</span> <span class="o">=</span> <span class="n">email</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRole</span><span class="o">(</span><span class="n">String</span> <span class="n">role</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">mRole</span> <span class="o">=</span> <span class="n">role</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">mName</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">mName</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPhone</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">mPhone</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setPhone</span><span class="o">(</span><span class="n">String</span> <span class="n">phone</span><span class="o">)</span> <span class="o">{</span>
+      <span class="n">mPhone</span> <span class="o">=</span> <span class="n">phone</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>As you can see, some of the fields get filled with data provided by user in EditTexts. The mRole String gets a default value of &lsquo;customer&rsquo; in RegisterActivity. If we&rsquo;re couriers creating a new account we can change our role in Firebase Database as follows:</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/oldblog/firebase_database_role_changing.png"
+        data-srcset="/images/oldblog/firebase_database_role_changing.png, /images/oldblog/firebase_database_role_changing.png 1.5x, /images/oldblog/firebase_database_role_changing.png 2x"
+        data-sizes="auto"
+        alt="/images/oldblog/firebase_database_role_changing.png"
+        title="image-center" />{: .align-center}</p>
+<p>We will use User role value later when setting notification functions in Firebase Cloud Functions.</p>
+<p>Ok, so now signing in activity. In here we have one Button (main signing in Button), two TextViews with onClickListeners (if user forgot his password or if he doesn&rsquo;t yet have an account) and two EditTexts (login and password input).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-Java" data-lang="Java">    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginActivity</span> <span class="kd">extends</span> <span class="n">AppCompatActivity</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">mEditTextEmail</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">EditText</span> <span class="n">mEditTextPass</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mEmail</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">mPass</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">FirebaseAuth</span> <span class="n">mAuth</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">ProgressDialog</span> <span class="n">mProgressDialog</span><span class="o">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onCreate</span><span class="o">(</span><span class="n">Bundle</span> <span class="n">savedInstanceState</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">.</span><span class="na">onCreate</span><span class="o">(</span><span class="n">savedInstanceState</span><span class="o">);</span>
+      <span class="n">setContentView</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">layout</span><span class="o">.</span><span class="na">activity_login</span><span class="o">);</span>
+
+      <span class="n">mAuth</span> <span class="o">=</span> <span class="n">FirebaseAuth</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+      <span class="c1">// If the objects getcurrentuser method is not null
+</span><span class="c1"></span>      <span class="c1">// then user is already signed in
+</span><span class="c1"></span>
+      <span class="c1">// Quicker and worse way of checking whether there is a user signed in.
+</span><span class="c1"></span>      <span class="c1">// If Activity will be paused and them resumed with onResume(), then there will be no
+</span><span class="c1"></span>      <span class="c1">// onCreate() call, and there will be no check. So if user is not signed in at that moment
+</span><span class="c1"></span>      <span class="c1">// Houston we have a problem. Solution from RegisterActivity is better :).
+</span><span class="c1"></span>      <span class="k">if</span><span class="o">(</span><span class="n">mAuth</span><span class="o">.</span><span class="na">getCurrentUser</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">finish</span><span class="o">();</span>
+        <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">(),</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+      <span class="o">}</span>
+
+      <span class="n">mEditTextEmail</span> <span class="o">=</span> <span class="o">(</span><span class="n">EditText</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">login_edittext_email</span><span class="o">);</span>
+      <span class="n">mEditTextPass</span> <span class="o">=</span> <span class="o">(</span><span class="n">EditText</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">login_edittext_pass</span><span class="o">);</span>
+      <span class="n">Button</span> <span class="n">mButtonLogin</span> <span class="o">=</span> <span class="o">(</span><span class="n">Button</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">login_button_login</span><span class="o">);</span>
+      <span class="n">TextView</span> <span class="n">mTextViewNotYet</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">login_textview_not_yet</span><span class="o">);</span>
+      <span class="n">TextView</span> <span class="n">mTextViewForgot</span> <span class="o">=</span> <span class="o">(</span><span class="n">TextView</span><span class="o">)</span> <span class="n">findViewById</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">id</span><span class="o">.</span><span class="na">login_textview_forgot_pass</span><span class="o">);</span>
+      <span class="n">mProgressDialog</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ProgressDialog</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+
+      <span class="c1">// Signing in Button&#39;s listener.
+</span><span class="c1"></span>      <span class="n">mButtonLogin</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">userLogin</span><span class="o">();</span>
+        <span class="o">}</span>
+      <span class="o">});</span>
+      <span class="c1">// If user doesn&#39;t have an account, go to RegisterActivity
+</span><span class="c1"></span>      <span class="n">mTextViewNotYet</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">finish</span><span class="o">();</span>
+          <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">RegisterActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+        <span class="o">}</span>
+      <span class="o">});</span>
+      <span class="c1">// If user forgot his password, send a default e-mail with reset instructions.
+</span><span class="c1"></span>      <span class="n">mTextViewForgot</span><span class="o">.</span><span class="na">setOnClickListener</span><span class="o">(</span><span class="k">new</span> <span class="n">View</span><span class="o">.</span><span class="na">OnClickListener</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onClick</span><span class="o">(</span><span class="n">View</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">mAuth</span><span class="o">.</span><span class="na">sendPasswordResetEmail</span><span class="o">(</span><span class="n">mEmail</span><span class="o">).</span><span class="na">addOnCompleteListener</span><span class="o">(</span><span class="k">new</span> <span class="n">OnCompleteListener</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Task</span> <span class="n">task</span><span class="o">)</span> <span class="o">{</span>
+              <span class="c1">// Show Toast based on whether password reset email was sent or not
+</span><span class="c1"></span>              <span class="k">if</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isSuccessful</span><span class="o">())</span> <span class="o">{</span>
+                <span class="n">Toast</span> <span class="n">toast</span> <span class="o">=</span> <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">getString</span><span class="o">(</span>
+                  <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_forgot_pass_toast</span><span class="o">),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">);</span>
+                <span class="n">toast</span><span class="o">.</span><span class="na">setGravity</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">CENTER</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+                <span class="n">toast</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+              <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">Toast</span> <span class="n">toast</span> <span class="o">=</span> <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">getString</span><span class="o">(</span>
+                  <span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_forgot_pass_toast_unsucc</span><span class="o">),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_SHORT</span><span class="o">);</span>
+                <span class="n">toast</span><span class="o">.</span><span class="na">setGravity</span><span class="o">(</span><span class="n">Gravity</span><span class="o">.</span><span class="na">CENTER</span><span class="o">,</span> <span class="n">0</span><span class="o">,</span> <span class="n">0</span><span class="o">);</span>
+                <span class="n">toast</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+              <span class="o">}</span>
+            <span class="o">}</span>
+          <span class="o">});</span>
+        <span class="o">}</span>
+      <span class="o">});</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">userLogin</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">mEmail</span> <span class="o">=</span> <span class="n">mEditTextEmail</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+      <span class="n">String</span> <span class="n">mPass</span> <span class="o">=</span> <span class="n">mEditTextPass</span><span class="o">.</span><span class="na">getText</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">trim</span><span class="o">();</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mEmail</span><span class="o">)){</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_hint_email</span><span class="o">),</span> <span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">TextUtils</span><span class="o">.</span><span class="na">isEmpty</span><span class="o">(</span><span class="n">mPass</span><span class="o">)){</span>
+        <span class="n">Toast</span><span class="o">.</span><span class="na">makeText</span><span class="o">(</span><span class="k">this</span><span class="o">,</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_hint_password</span><span class="o">),</span><span class="n">Toast</span><span class="o">.</span><span class="na">LENGTH_LONG</span><span class="o">).</span><span class="na">show</span><span class="o">();</span>
+        <span class="k">return</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">setMessage</span><span class="o">(</span><span class="n">getString</span><span class="o">(</span><span class="n">R</span><span class="o">.</span><span class="na">string</span><span class="o">.</span><span class="na">login_progressbar_login</span><span class="o">));</span>
+      <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">show</span><span class="o">();</span>
+      <span class="c1">// Signing the user in
+</span><span class="c1"></span>      <span class="n">mAuth</span><span class="o">.</span><span class="na">signInWithEmailAndPassword</span><span class="o">(</span><span class="n">mEmail</span><span class="o">,</span> <span class="n">mPass</span><span class="o">)</span>
+        <span class="o">.</span><span class="na">addOnCompleteListener</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="k">new</span> <span class="n">OnCompleteListener</span><span class="o">()</span> <span class="o">{</span>
+          <span class="nd">@Override</span>
+          <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onComplete</span><span class="o">(</span><span class="nd">@NonNull</span> <span class="n">Task</span> <span class="n">task</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">mProgressDialog</span><span class="o">.</span><span class="na">dismiss</span><span class="o">();</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">task</span><span class="o">.</span><span class="na">isSuccessful</span><span class="o">())</span> <span class="o">{</span>
+              <span class="n">finish</span><span class="o">();</span>
+              <span class="n">startActivity</span><span class="o">(</span><span class="k">new</span> <span class="n">Intent</span><span class="o">(</span><span class="n">LoginActivity</span><span class="o">.</span><span class="na">this</span><span class="o">,</span> <span class="n">MainActivity</span><span class="o">.</span><span class="na">class</span><span class="o">));</span>
+            <span class="o">}</span>
+          <span class="o">}</span>
+        <span class="o">});</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>And that&rsquo;s it! Check the full source code on GitHub for fully working example.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 17170-09-58</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/teaching/wdf2016/" class="prev" rel="prev" title="Introduction to Philosophy 2016/2017"><i class="fas fa-angle-left fa-fw"></i>Introduction to Philosophy 2016/2017</a>
+            <a href="/posts/2017-07-06-enumsql/" class="next" rel="next" title="[OLD] Java 101: Enum &#43; Servlets">[OLD] Java 101: Enum &#43; Servlets<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+<<<<<<< HEAD
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.75.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+=======
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+>>>>>>> 25716b46b03183761882404e34bbef92b9166eac
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">mw</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
