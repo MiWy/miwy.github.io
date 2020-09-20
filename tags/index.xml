@@ -1,7 +1,0 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Tags - Tag - Michał Wyrwa</title>
-        <link>https://michalwyrwa.org/tags/</link>
-        <description>Tags - Tag - Michał Wyrwa</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><atom:link href="https://michalwyrwa.org/tags/" rel="self" type="application/rss+xml" /></channel>
-</rss>
