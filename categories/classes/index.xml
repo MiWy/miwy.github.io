@@ -3,7 +3,14 @@
         <title>classes - Category - Michał Wyrwa</title>
         <link>https://michalwyrwa.org/categories/classes/</link>
         <description>classes - Category - Michał Wyrwa</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://michalwyrwa.org/categories/classes/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://michalwyrwa.org/categories/classes/" rel="self" type="application/rss+xml" /><item>
+    <title>Philosophy of mind 2020/2021</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <pubDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Wstęp do kognitywistyki 2020/2021 (ćwiczenia)</title>
     <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
     <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
@@ -12,10 +19,10 @@
     <description><![CDATA[]]></description>
 </item><item>
     <title>Philosophy of mind 2019/2020</title>
-    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <link>https://michalwyrwa.org/posts/teaching/fu2020/</link>
     <pubDate>Tue, 31 Dec 2019 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <guid>https://michalwyrwa.org/posts/teaching/fu2020/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Introduction to Cognitive Science 2019/2020</title>
@@ -65,13 +72,6 @@
     <pubDate>Thu, 01 Oct 2015 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://michalwyrwa.org/posts/teaching/ti2015/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Introduction to Philosophy 2015/2016</title>
-    <link>https://michalwyrwa.org/posts/teaching/wdf2015/</link>
-    <pubDate>Thu, 01 Oct 2015 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/wdf2015/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
