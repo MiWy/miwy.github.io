@@ -3,28 +3,42 @@
         <title>Michał Wyrwa</title>
         <link>https://michalwyrwa.org/</link>
         <description>Michał Wyrwa</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Wed, 01 Sep 2021 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Philosophy of mind 2020/2021</title>
-    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
-    <pubDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <title>Technologia informacyjna 2021/2022</title>
+    <link>https://michalwyrwa.org/posts/teaching/ti/</link>
+    <pubDate>Wed, 01 Sep 2021 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <guid>https://michalwyrwa.org/posts/teaching/ti/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>ZF Etyka technologii, sztucznej inteligencji i neuroetyka 2020/2021</title>
+    <title>Wstęp do kognitywistyki 2021/2022 (ćwiczenia)</title>
+    <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
+    <pubDate>Wed, 01 Sep 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Etyka technologii, sztucznej inteligencji i neuroetyka 2020/2021</title>
     <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
     <pubDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
     <description><![CDATA[]]></description>
 </item><item>
+    <title>Philosophy of mind 2020/2021</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu2021/</link>
+    <pubDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu2021/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Wstęp do kognitywistyki 2020/2021 (ćwiczenia)</title>
-    <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
+    <link>https://michalwyrwa.org/posts/teaching/wdk2020/</link>
     <pubDate>Tue, 01 Sep 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
+    <guid>https://michalwyrwa.org/posts/teaching/wdk2020/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Philosophy of mind 2019/2020</title>
@@ -62,25 +76,5 @@ There are things about writing that just take too much time when done by hand. T
     <author>Author</author>
     <guid>https://michalwyrwa.org/posts/teaching/wdk2018/</guid>
     <description><![CDATA[]]></description>
-</item><item>
-    <title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit</title>
-    <link>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</link>
-    <pubDate>Sun, 29 Apr 2018 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</guid>
-    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.
-Aplikacja wyglądać będzie tak:
-{: .align-center}
-Komponenty architektury Androida Architecture Components to biblioteki dla Androida, zaprezentowane przez Google na I/O &lsquo;17. Mają one ułatwić proces projektowania architektury aplikacji.]]></description>
-</item><item>
-    <title>[OLD] SpotiBar: ANGULARJS</title>
-    <link>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</link>
-    <pubDate>Fri, 13 Apr 2018 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</guid>
-    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-PART 1 Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.
-Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo Mnogości JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.]]></description>
 </item></channel>
 </rss>
