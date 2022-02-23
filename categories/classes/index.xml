@@ -3,7 +3,21 @@
         <title>classes - Category - Michał Wyrwa</title>
         <link>https://michalwyrwa.org/categories/classes/</link>
         <description>classes - Category - Michał Wyrwa</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Wed, 01 Sep 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://michalwyrwa.org/categories/classes/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://michalwyrwa.org/categories/classes/" rel="self" type="application/rss+xml" /><item>
+    <title>Etyka technologii, sztucznej inteligencji i neuroetyka 2021/2022</title>
+    <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
+    <pubDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Philosophy of mind 2021/2022</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <pubDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Technologia informacyjna 2021/2022</title>
     <link>https://michalwyrwa.org/posts/teaching/ti/</link>
     <pubDate>Wed, 01 Sep 2021 00:00:00 &#43;0000</pubDate>
@@ -19,10 +33,10 @@
     <description><![CDATA[]]></description>
 </item><item>
     <title>Etyka technologii, sztucznej inteligencji i neuroetyka 2020/2021</title>
-    <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
+    <link>https://michalwyrwa.org/posts/teaching/ethics2021/</link>
     <pubDate>Thu, 31 Dec 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
+    <guid>https://michalwyrwa.org/posts/teaching/ethics2021/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>Philosophy of mind 2020/2021</title>
@@ -58,20 +72,6 @@
     <pubDate>Mon, 31 Dec 2018 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://michalwyrwa.org/posts/teaching/fu2019/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Introduction to Cognitive Science 2018/2019</title>
-    <link>https://michalwyrwa.org/posts/teaching/wdk2018/</link>
-    <pubDate>Mon, 01 Oct 2018 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/wdk2018/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Philosophy of mind 2017/2018</title>
-    <link>https://michalwyrwa.org/posts/teaching/fu2018/</link>
-    <pubDate>Sun, 31 Dec 2017 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://michalwyrwa.org/posts/teaching/fu2018/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>
