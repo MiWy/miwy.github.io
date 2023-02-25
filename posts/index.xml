@@ -3,7 +3,23 @@
         <title>All Posts - Michał Wyrwa</title>
         <link>https://michalwyrwa.org/posts/</link>
         <description>All Posts | Michał Wyrwa</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Thu, 01 Sep 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://michalwyrwa.org/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Sat, 31 Dec 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://michalwyrwa.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Etyka technologii, sztucznej inteligencji i neuroetyka 2022/2023</title>
+    <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
+    <pubDate>Sat, 31 Dec 2022 00:00:00 &#43;0000</pubDate>
+    <author>mw</author>
+    <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Philosophy of mind 2022/2023</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <pubDate>Sat, 31 Dec 2022 00:00:00 &#43;0000</pubDate>
+    <author>mw</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Technologia informacyjna 2022/2023</title>
     <link>https://michalwyrwa.org/posts/teaching/ti/</link>
     <pubDate>Thu, 01 Sep 2022 00:00:00 &#43;0000</pubDate>
@@ -17,22 +33,6 @@
     <pubDate>Thu, 01 Sep 2022 00:00:00 &#43;0000</pubDate>
     <author>mw</author>
     <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Etyka technologii, sztucznej inteligencji i neuroetyka 2021/2022</title>
-    <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
-    <pubDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
-    <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Philosophy of mind 2021/2022</title>
-    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
-    <pubDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
-    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
