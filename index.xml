@@ -2,7 +2,7 @@
     <channel>
         <title>Michał Wyrwa</title>
         <link>https://michalwyrwa.org/</link>
-        <description>Michał Wyrwa</description>
+        <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
@@ -14,7 +14,7 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Wstęp do filozofii 2022/2023 (ćwiczenia)</title>
+    <title>Wstęp do filozofii 2023/2024 (ćwiczenia)</title>
     <link>https://michalwyrwa.org/posts/teaching/wdf/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
     <author>mw</author>
@@ -22,9 +22,9 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
-    <title>Wstęp do kognitywistyki 2022/2023 (ćwiczenia)</title>
+    <title>Wstęp do kognitywistyki 2023/2024 (ćwiczenia)</title>
     <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
-    <pubDate>Thu, 01 Sep 2022 00:00:00 &#43;0000</pubDate>
+    <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
     <author>mw</author>
     <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
     <description><![CDATA[]]></description>

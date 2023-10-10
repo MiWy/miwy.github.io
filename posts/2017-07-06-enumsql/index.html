@@ -4,15 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>[OLD] Java 101: Enum &#43; Servlets - Michał Wyrwa</title><meta name="Description" content=""><meta property="og:title" content="[OLD] Java 101: Enum &#43; Servlets" />
+        <title>[OLD] Java 101: Enum &#43; Servlets - Michał Wyrwa</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="[OLD] Java 101: Enum &#43; Servlets" />
 <meta property="og:description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 ENUM Typ enum, dodany w wersji 1.5, służy do definiowania stałych. Kiedy mamy z nim do czynienia, to wiemy że mamy do wyboru ograniczony zbiór możliwych opcji. Przykładowo, definiując enum poraRoku z góry wiemy, że będzie on przyjmować wartości jedynie spośród ZIMA, WIOSNA, LATO i JESIEN.
 Każdy enum domyślnie rozszerza klasę java.lang.Enum, dlatego nie może rozszerzać żadnej innej klasy." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://michalwyrwa.org/posts/2017-07-06-enumsql/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2017-07-06T00:00:00+00:00" />
-<meta property="article:modified_time" content="2017-07-06T00:00:00+00:00" /><meta property="og:site_name" content="Michał Wyrwa" />
-
+<meta property="article:modified_time" content="2017-07-06T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[OLD] Java 101: Enum &#43; Servlets"/>
 <meta name="twitter:description" content="[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
@@ -46,7 +45,7 @@ Każdy enum domyślnie rozszerza klasę java.lang.Enum, dlatego nie może rozsze
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="Michał Wyrwa">Michał Wyrwa</a>
+            <a href="/" title="Michał Wyrwa">My cool site</a>
         </div>
         <div class="menu">
             <div class="menu-inner"><a class="menu-item" href="/research/"><i class='fas fa-copy'></i> research </a><a class="menu-item" href="/categories/classes/"><i class='fas fa-user-graduate'></i> teaching </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
@@ -58,7 +57,7 @@ Każdy enum domyślnie rozszerza klasę java.lang.Enum, dlatego nie może rozsze
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="Michał Wyrwa">Michał Wyrwa</a>
+                <a href="/" title="Michał Wyrwa">My cool site</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -514,9 +513,9 @@ Z drugiej strony, enumy są łatwym sposobem obsługi stałych, które mają pos
 </span></span><span class="line"><span class="cl">          <span class="c1">// Przygotowujemy dane do wysłania do bazy.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&#34;INSERT INTO ENTRIES (content, date, title) values (?, ?, ?)&#34;</span><span class="o">;</span>
 </span></span><span class="line"><span class="cl">          <span class="n">PreparedStatement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">          <span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">1</span><span class="o">,</span> <span class="n">content</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">          <span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">3</span><span class="o">,</span>  <span class="n">entryTitle</span><span class="o">);</span>
-</span></span><span class="line"><span class="cl">          <span class="n">statement</span><span class="o">.</span><span class="na">setTimestamp</span><span class="o">(</span><span class="n">2</span><span class="o">,</span> <span class="n">timestamp</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">          <span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="n">content</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">          <span class="n">statement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">3</span><span class="o">,</span>  <span class="n">entryTitle</span><span class="o">);</span>
+</span></span><span class="line"><span class="cl">          <span class="n">statement</span><span class="o">.</span><span class="na">setTimestamp</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span> <span class="n">timestamp</span><span class="o">);</span>
 </span></span><span class="line"><span class="cl">          
 </span></span><span class="line"><span class="cl">          <span class="c1">// Wysyłamy przygotowane dane do bazy i zamykamy połączenia.
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>          <span class="n">statement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">();</span>
@@ -617,7 +616,7 @@ Z drugiej strony, enumy są łatwym sposobem obsługi stałych, które mają pos
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.102.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.119.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">mw</a></span></div>
         </div>
     </footer></div>
