@@ -3,9 +3,25 @@
         <title>Michał Wyrwa</title>
         <link>https://michalwyrwa.org/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Sun, 31 Dec 2023 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Etyka technologii, sztucznej inteligencji i neuroetyka 2023/2024</title>
+    <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
+    <pubDate>Sun, 31 Dec 2023 00:00:00 &#43;0000</pubDate>
+    <author>mw</author>
+    <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Filozofia umysłu 2023/2024</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <pubDate>Sun, 31 Dec 2023 00:00:00 &#43;0000</pubDate>
+    <author>mw</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Technologia informacyjna 2023/2024</title>
     <link>https://michalwyrwa.org/posts/teaching/ti/</link>
     <pubDate>Fri, 01 Sep 2023 00:00:00 &#43;0000</pubDate>
@@ -80,16 +96,6 @@ Od razu zaznaczę, że należę do grona ludzi, którzy trzymać swoją kolekcj�
     <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
 ENUM Typ enum, dodany w wersji 1.5, służy do definiowania stałych. Kiedy mamy z nim do czynienia, to wiemy że mamy do wyboru ograniczony zbiór możliwych opcji. Przykładowo, definiując enum poraRoku z góry wiemy, że będzie on przyjmować wartości jedynie spośród ZIMA, WIOSNA, LATO i JESIEN.
 Każdy enum domyślnie rozszerza klasę java.lang.Enum, dlatego nie może rozszerzać żadnej innej klasy.]]></description>
-</item>
-<item>
-    <title>[OLD] Courier App for Android</title>
-    <link>https://michalwyrwa.org/posts/2017-05-17-android_courier_firebase/</link>
-    <pubDate>Wed, 17 May 2017 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
-    <guid>https://michalwyrwa.org/posts/2017-05-17-android_courier_firebase/</guid>
-    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-FIRST PART The idea for a courier app isn’t new. You can find countless examples on Google Play Store. But building one is actually quite handy exercise in integrating Android with Firebase services.
-In this series we will cover only parts of building the actual bike courier app. Focus will be on Firebase integration and also some design pattern strategies.]]></description>
 </item>
 </channel>
 </rss>
