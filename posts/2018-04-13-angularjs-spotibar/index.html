@@ -40,7 +40,7 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "mw"
+                "name": "xxxx"
             },"description": ""
     }
     </script></head>
@@ -76,7 +76,7 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">[OLD] SpotiBar: ANGULARJS</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>mw</a></span>&nbsp;<span class="post-category">included in <a href="/categories/blog/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Blog</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>xxxx</a></span>&nbsp;<span class="post-category">included in <a href="/categories/blog/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Blog</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="131313-09-00">131313-09-00</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;5445 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;26 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -98,9 +98,9 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
           <ul>
             <li><a href="#bazowy-plik-indexhtml">Bazowy plik index.html</a>
               <ul>
-                <li><a href="#html"><html></a></li>
-                <li><a href="#head"><head></a></li>
-                <li><a href="#body"><body></a></li>
+                <li></li>
+                <li></li>
+                <li></li>
               </ul>
             </li>
             <li><a href="#autoryzacja-oauth">Autoryzacja OAuth</a>
@@ -185,7 +185,7 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
 <h3 id="bazowy-plik-indexhtml">Bazowy plik index.html</h3>
 <p>Użytkownik naszej prostej aplikacji będzie de facto przemieszczać się pomiędzy dwoma stronami: na jednej będzie ustalać kryteria wyszukiwania rekomendacji, na drugiej zaś wyświetlane będą wyniki. Nie będziemy do tego celu tworzyć osobnych pełnoprawnych plików HTML, tylko skorzystamy z obecnej w AngularJS możliwości dynamicznego podmieniania elementów HTML.</p>
 <p>Naszym bazowym plikiem będzie umieszczony w wyjściowym folderze naszego projektu plik <code>index.html</code>. Pełen kod źródłowy znajduje się <a href="https://github.com/MiWy/spotify-recommendations-app-js/blob/gh-pages/index.html" target="_blank" rel="noopener noreffer ">w repozytorium</a>, tutaj opiszę tylko kluczowe kwestie.</p>
-<h4 id="html"><html></h4>
+<h4><html></h4>
 <p>Oznaczenie Angularowe pojawia się już w pierwszym znaczniku:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -196,7 +196,7 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>ng-app</code> mówi Angularowi jaki jest najbardziej podstawowy element naszej aplikacji, rejestruje ją dla frameworku. Równie dobrze można w tym przypadku dać ten atrybut w elemencie <code>body</code>.</p>
-<h4 id="head"><head></h4>
+<h4><head></h4>
 <p>W elemencie <code>&lt;head&gt;</code> mamy zbiór odwołań do plików .css i .js. Niektóre z nich mają standardową strukturę, przykładowo dla elementu <code>script</code> jest podana ścieżka do pliku w określonej lokalizacji na dysku. Dla celów pokazowych, nie wszystkie pliki są tak ładowane :).  Na przykład pliki Bootstrapowe są ładowane z serwerów Bootstrapa, nie z dysku.</p>
 <p>Ma to swoje plusy i minusy, z jednej strony jest szansa, że takie korzystanie z <a href="https://gtmetrix.com/why-use-a-cdn.html" target="_blank" rel="noopener noreffer ">CDN</a> (<em>content delivery network</em>) pozwoli na szybsze załadowanie strony. Z drugiej strony, jak serwery, na których jest dany plik umieszczony, się posypią, to nasza strona też może ucierpieć.</p>
 <p>Ostatnią sprawą jest znacznik <code>&lt;base /&gt;</code>. Ułatwia on życie, pozwalając na zdefiniowanie adresu bazowego naszej strony internetowej. Pozostawienie go na <code>/</code> oznacza, że podstrony będą się ładować na zasadzie:</p>
@@ -263,7 +263,7 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
 </span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h4 id="body"><body></h4>
+</div><h4><body></h4>
 <p>W tym momencie zrobimy tylko pasek nawigacyjny z przyciskiem do logowania.</p>
 <p>Kod wygląda tak:</p>
 <div class="highlight"><div class="chroma">
@@ -2023,8 +2023,8 @@ Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez na
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.127.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">mw</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.151.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.3.0"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">xxxx</a></span></div>
         </div>
     </footer></div>
 

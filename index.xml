@@ -9,15 +9,23 @@
     <title>Wstęp do filozofii 2025/2026 (ćwiczenia)</title>
     <link>https://michalwyrwa.org/posts/teaching/wdf/</link>
     <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/wdf/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Wstęp do kognitywistyki 2025/2026 (ćwiczenia)</title>
+    <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
+    <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Ethics of Technology, AI, and Neuroethics 2024/2025</title>
     <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
     <pubDate>Tue, 31 Dec 2024 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -25,32 +33,25 @@
     <title>Methods in experimental philosophy of mind 2024/2025 (lab)</title>
     <link>https://michalwyrwa.org/posts/teaching/mixphi/</link>
     <pubDate>Sun, 01 Sep 2024 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/mixphi/</guid>
-    <description><![CDATA[General info The course aims to develop participants&rsquo; ability to apply empirical methods to philosophical questions. We will explore how experimental findings shape philosophical debates within the broader cognitive science framework. Since the focus will be on understanding, designing, conducting, and analyzing empirical inquries rather than delving into philosophical nuances, students are encouraged to familiarize themselves with the suggested theoretical literature.
-Each class will consist of a discussion on a key paper reading, a student presentation on follow-up studies, and research exercises.]]></description>
+    <description><![CDATA[<h2 id="general-info">General info</h2>
+<p>The course aims to develop participants&rsquo; ability to apply empirical methods to philosophical questions. We will explore how experimental findings shape philosophical debates within the broader cognitive science framework. Since the focus will be on understanding, designing, conducting, and analyzing empirical inquries inspired by philosophy rather than delving into philosophical nuances, students are encouraged to familiarize themselves with the suggested theoretical literature.</p>
+<p>Each class will consist of a discussion on a key paper reading, a student presentation on follow-up studies, and research exercises. Mid-to-late November we will also have a refresher on basic statistics, so ensure you have appropriate software installed (I&rsquo;ll be using RStudio but you can work with whatever you are comfortable with).</p>]]></description>
 </item>
 <item>
     <title>Technologia informacyjna 2024/2025</title>
     <link>https://michalwyrwa.org/posts/teaching/ti/</link>
     <pubDate>Sun, 01 Sep 2024 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/ti/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Wstęp do kognitywistyki 2024/2025 (ćwiczenia)</title>
-    <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
-    <pubDate>Sun, 01 Sep 2024 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
-    <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Filozofia umysłu 2023/2024</title>
     <link>https://michalwyrwa.org/posts/teaching/fu/</link>
     <pubDate>Sun, 31 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
     <description><![CDATA[]]></description>
 </item>
@@ -58,43 +59,51 @@ Each class will consist of a discussion on a key paper reading, a student presen
     <title>Writing workflow: Pandoc scripts</title>
     <link>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</link>
     <pubDate>Sat, 08 Jun 2019 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</guid>
-    <description><![CDATA[tl;dr I uploaded my Pandoc workflow to GitHub, feel free to use it Having an unobtrusive workflow is important.
-There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want .docx, others .tex or .pdfs, all complying with a set of strict formatting rules. Often enough a faithful conversion of .]]></description>
+    <description><![CDATA[<h3 id="tldr-i-uploaded-my-pandoc-workflow-to-github-feel-free-to-use-it">tl;dr I uploaded my Pandoc workflow to <a href="https://github.com/MiWy/my-pandoc-scripts" target="_blank" rel="noopener noreffer ">GitHub</a>, feel free to use it</h3>
+<p>Having an unobtrusive workflow is important.</p>
+<p>There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want <code>.docx</code>, others <code>.tex</code> or <code>.pdfs</code>, all complying with a set of strict formatting rules. Often enough a faithful conversion of <code>.odt</code> to <code>.docx</code> means spending hours on fiddling with margins, fonts, and other details. And do not get me started on &lsquo;We want <code>.tex</code> files!&rsquo;.</p>]]></description>
 </item>
 <item>
     <title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit</title>
     <link>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</link>
     <pubDate>Sun, 29 Apr 2018 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</guid>
-    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.
-Aplikacja wyglądać będzie tak:
-{: .align-center}
-Komponenty architektury Androida Architecture Components to biblioteki dla Androida, zaprezentowane przez Google na I/O &lsquo;17. Mają one ułatwić proces projektowania architektury aplikacji.]]></description>
+    <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
+<p>W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.</p>
+<p>Aplikacja wyglądać będzie tak:</p>
+<p>{: .align-center}</p>
+<h2 id="komponenty-architektury-androida">Komponenty architektury Androida</h2>
+<p><a href="https://developer.android.com/topic/libraries/architecture/" target="_blank" rel="noopener noreffer ">Architecture Components</a> to biblioteki dla Androida, zaprezentowane przez Google na <a href="https://www.youtube.com/watch?v=FrteWKKVyzI" target="_blank" rel="noopener noreffer ">I/O &lsquo;17</a>. Mają one ułatwić proces projektowania architektury aplikacji. Dotąd zespół Androida nie rekomendował żadnego konkretnego wzorca architektury. A tych popularnych trochę jest, by wymienić same <a href="https://medium.com/@vicky7230/android-architecture-patterns-mv-c-p-vm-4594574eeaa1" target="_blank" rel="noopener noreffer "><em>model-view-*</em></a>.</p>]]></description>
 </item>
 <item>
     <title>[OLD] SpotiBar: ANGULARJS</title>
     <link>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</link>
     <pubDate>Fri, 13 Apr 2018 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</guid>
-    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-PART 1 Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.
-Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo Mnogości JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.]]></description>
+    <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
+<h2 id="part-1">PART 1</h2>
+<p>Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.</p>
+<p>Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo <a href="https://risingstars.js.org/2017/en/" target="_blank" rel="noopener noreffer ">Mnogości</a> JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.</p>]]></description>
 </item>
 <item>
     <title>[OLD] SpotiBar: Spotify &#43; Foobar</title>
     <link>https://michalwyrwa.org/posts/2017-09-13-spotibar/</link>
     <pubDate>Wed, 13 Sep 2017 00:00:00 &#43;0000</pubDate>
-    <author>mw</author>
+    <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/2017-09-13-spotibar/</guid>
-    <description><![CDATA[[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]
-SPOTIBAR Spotify zacząłem używać od momentu jak wprowadzili abonament w PLN. Kilka lat doświadczenia się zatem zebrało i choć bardzo sobie cenię tę usługę, to jest jedna rzecz, która mi strasznie w niej przeszkadza.
-{: .align-center}
-Od razu zaznaczę, że należę do grona ludzi, którzy trzymać swoją kolekcję muzyczną w ordnungu. Jak kupuję płytę CD, to znajduję dla niej miejsce na odpowiedniej półeczce, scrobbluję do last.]]></description>
+    <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
+<h2 id="spotibar">SPOTIBAR</h2>
+<p>Spotify zacząłem używać od momentu jak wprowadzili abonament w PLN. Kilka lat doświadczenia się zatem zebrało i choć bardzo sobie cenię tę usługę, to jest jedna rzecz, która mi strasznie w niej przeszkadza.</p>
+<p>{: .align-center}</p>
+<p>Od razu zaznaczę, że należę do grona ludzi, którzy trzymać swoją kolekcję muzyczną w ordnungu. Jak kupuję płytę CD, to znajduję dla niej miejsce na odpowiedniej półeczce, scrobbluję do <a href="https://www.last.fm" target="_blank" rel="noopener noreffer ">last.fm</a> z iTunesa, Spotify&rsquo;a i telefonu, staram się pamiętać czy dany album mam na nośniku fizycznym, cyfrowym, w streamingu, i tak dalej.
+Zarządzanie kolekcją w Spotify kuleje. Jak tylko nasze playlisty przekroczą te kilkadziesiąt utworów, wzrokowe odnalezienie się w nich jest dla mnie niemożliwe. Jest searchbar po playliście, ale co z utworami, których nazwy nie potrafię przywołać a potrafię jedynie rozpoznać? Poza tym, jakbym chciał wszystko załatwiać klawiaturowo, to używałbym <a href="https://www.musicpd.org" target="_blank" rel="noopener noreffer ">mpd</a> + <a href="https://www.mopidy.com" target="_blank" rel="noopener noreffer ">mopidy</a> w terminalu.
+Listy mają za wysoką linię wiersza (nawet po zoom- na maksimum), nie mogę playlisty pokazać jako zbioru miniatur okładek/wykonawców, nie mogę szukać jednocześnie po wszystkich swoich playlistach/bibliotece (tylko po całej bazie utwórów), i tak dalej. Cała koncepcja biblioteki w Spotify leży i kwiczy. Gdybym miał przenieść tam bibliotekę wykonawców z last.fm, nie wiem w jaki sposób miałbym cokolwiek w niej znaleźć.
+Koniec końców moja przygoda ze Spotify wygląda tak, że nigdy wcześniej tak dużo nowej muzyki nie słuchałem, ale też nigdy wcześniej tak mało wykonawców/albumów nie zapamiętywałem. Przyjąłem więc rozwiązanie robocze: playlista jest albo pod gatunek albo pod dany temat. Przykładowo, wczesny black metal ma swoją playlistę, podobnie jak muzyka pasująca do pracy przy komputerze, czy jazdy samochodem. Mam też playlisty nieeleganckie: albumy do przesłuchania, utwory do uporządkowania i tym podobne.
+Być może taki urok czasów, presji wywoływanej samą możliwością słuchania czegokolwiek spośród X milionów dostępnych w Spotify utworów. Póki co nie potrafię tego rozstrzygnąć, ale pamiętam taki programik jak <a href="https://www.foobar2000.org" target="_blank" rel="noopener noreffer ">foobar2000</a>. Był idealny dla moich potrzeb. Prosty, konfigurowalny do cna, w którym od razu wiedziałem, gdzie i w jakim miejscu kryje się ten utwór, na który mam w danym momencie ochotę.</p>]]></description>
 </item>
 </channel>
 </rss>
