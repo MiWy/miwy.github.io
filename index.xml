@@ -1,76 +1,76 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Michał Wyrwa</title>
-        <link>https://michalwyrwa.org/</link>
+        <link>http://localhost:1313/</link>
         <description>This is my cool site</description>
         <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</lastBuildDate>
-            <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>Wstęp do filozofii 2025/2026 (ćwiczenia)</title>
-    <link>https://michalwyrwa.org/posts/teaching/wdf/</link>
+    <link>http://localhost:1313/posts/teaching/wdf/</link>
     <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/wdf/</guid>
+    <guid>http://localhost:1313/posts/teaching/wdf/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Wstęp do kognitywistyki 2025/2026 (ćwiczenia)</title>
-    <link>https://michalwyrwa.org/posts/teaching/wdk/</link>
+    <link>http://localhost:1313/posts/teaching/wdk/</link>
     <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/wdk/</guid>
+    <guid>http://localhost:1313/posts/teaching/wdk/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Ethics of Technology, AI, and Neuroethics 2024/2025</title>
-    <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
+    <link>http://localhost:1313/posts/teaching/ethics/</link>
     <pubDate>Tue, 31 Dec 2024 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
+    <guid>http://localhost:1313/posts/teaching/ethics/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Methods in experimental philosophy of mind 2024/2025 (lab)</title>
-    <link>https://michalwyrwa.org/posts/teaching/mixphi/</link>
+    <link>http://localhost:1313/posts/teaching/mixphi/</link>
     <pubDate>Sun, 01 Sep 2024 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/mixphi/</guid>
+    <guid>http://localhost:1313/posts/teaching/mixphi/</guid>
     <description><![CDATA[<h2 id="general-info">General info</h2>
 <p>The course aims to develop participants&rsquo; ability to apply empirical methods to philosophical questions. We will explore how experimental findings shape philosophical debates within the broader cognitive science framework. Since the focus will be on understanding, designing, conducting, and analyzing empirical inquries inspired by philosophy rather than delving into philosophical nuances, students are encouraged to familiarize themselves with the suggested theoretical literature.</p>
 <p>Each class will consist of a discussion on a key paper reading, a student presentation on follow-up studies, and research exercises. Mid-to-late November we will also have a refresher on basic statistics, so ensure you have appropriate software installed (I&rsquo;ll be using RStudio but you can work with whatever you are comfortable with).</p>]]></description>
 </item>
 <item>
     <title>Technologia informacyjna 2024/2025</title>
-    <link>https://michalwyrwa.org/posts/teaching/ti/</link>
+    <link>http://localhost:1313/posts/teaching/ti/</link>
     <pubDate>Sun, 01 Sep 2024 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/ti/</guid>
+    <guid>http://localhost:1313/posts/teaching/ti/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Filozofia umysłu 2023/2024</title>
-    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <link>http://localhost:1313/posts/teaching/fu/</link>
     <pubDate>Sun, 31 Dec 2023 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <guid>http://localhost:1313/posts/teaching/fu/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
     <title>Writing workflow: Pandoc scripts</title>
-    <link>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</link>
+    <link>http://localhost:1313/posts/2019-06-08-pandocscripts/</link>
     <pubDate>Sat, 08 Jun 2019 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</guid>
+    <guid>http://localhost:1313/posts/2019-06-08-pandocscripts/</guid>
     <description><![CDATA[<h3 id="tldr-i-uploaded-my-pandoc-workflow-to-github-feel-free-to-use-it">tl;dr I uploaded my Pandoc workflow to <a href="https://github.com/MiWy/my-pandoc-scripts" target="_blank" rel="noopener noreffer ">GitHub</a>, feel free to use it</h3>
 <p>Having an unobtrusive workflow is important.</p>
 <p>There are things about writing that just take too much time when done by hand. Text formatting and file converting are two that I especially hate. People expect different things. Some want <code>.docx</code>, others <code>.tex</code> or <code>.pdfs</code>, all complying with a set of strict formatting rules. Often enough a faithful conversion of <code>.odt</code> to <code>.docx</code> means spending hours on fiddling with margins, fonts, and other details. And do not get me started on &lsquo;We want <code>.tex</code> files!&rsquo;.</p>]]></description>
 </item>
 <item>
     <title>[OLD] ISS, Architecture: ViewModel, LiveData, Retrofit</title>
-    <link>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</link>
+    <link>http://localhost:1313/posts/2018-04-29-viewmodel/</link>
     <pubDate>Sun, 29 Apr 2018 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</guid>
+    <guid>http://localhost:1313/posts/2018-04-29-viewmodel/</guid>
     <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
 <p>W tym artykule stworzymy prostą aplikację na Android wyświetlającą aktualną pozycję Międzynarodowej Stacji Kosmicznej, wykorzystującą ViewModel, LiveData oraz bibliotekę Retrofit. Przy okazji wyjaśnimy jak działają dodane w zeszłym roku komponenty architektury Androida.</p>
 <p>Aplikacja wyglądać będzie tak:</p>
@@ -80,10 +80,10 @@
 </item>
 <item>
     <title>[OLD] SpotiBar: ANGULARJS</title>
-    <link>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</link>
+    <link>http://localhost:1313/posts/2018-04-13-angularjs-spotibar/</link>
     <pubDate>Fri, 13 Apr 2018 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</guid>
+    <guid>http://localhost:1313/posts/2018-04-13-angularjs-spotibar/</guid>
     <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
 <h2 id="part-1">PART 1</h2>
 <p>Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.</p>
@@ -91,10 +91,10 @@
 </item>
 <item>
     <title>[OLD] SpotiBar: Spotify &#43; Foobar</title>
-    <link>https://michalwyrwa.org/posts/2017-09-13-spotibar/</link>
+    <link>http://localhost:1313/posts/2017-09-13-spotibar/</link>
     <pubDate>Wed, 13 Sep 2017 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/2017-09-13-spotibar/</guid>
+    <guid>http://localhost:1313/posts/2017-09-13-spotibar/</guid>
     <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
 <h2 id="spotibar">SPOTIBAR</h2>
 <p>Spotify zacząłem używać od momentu jak wprowadzili abonament w PLN. Kilka lat doświadczenia się zatem zebrało i choć bardzo sobie cenię tę usługę, to jest jedna rzecz, która mi strasznie w niej przeszkadza.</p>
