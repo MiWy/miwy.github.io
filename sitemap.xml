@@ -2,23 +2,23 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/research/</loc><lastmod>2022-05-16T15:58:26&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/classes/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/teaching/wdf/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/teaching/wdk/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/teaching/ethics/</loc><lastmod>2024-12-31T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/teaching/mixphi/</loc><lastmod>2024-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/teaching/ti/</loc><lastmod>2024-09-01T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/teaching/fu/</loc><lastmod>2023-12-31T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/research/</loc><lastmod>2022-05-16T15:58:26&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/blog/</loc><lastmod>2019-06-08T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/2019-06-08-pandocscripts/</loc><lastmod>2019-06-08T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/2018-04-29-viewmodel/</loc><lastmod>2018-04-29T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/2018-04-13-angularjs-spotibar/</loc><lastmod>2018-04-13T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/2017-09-13-spotibar/</loc><lastmod>2017-09-13T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/2017-07-06-enumsql/</loc><lastmod>2017-07-06T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/2017-05-17-android_courier_firebase/</loc><lastmod>2017-05-17T00:00:00&#43;00:00</lastmod></url><url>
-            <loc>http://localhost:1313/tags/</loc></url></urlset>
+            <loc>https://michalwyrwa.org/research/</loc><lastmod>2022-05-16T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/categories/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/categories/classes/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/teaching/ti/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/teaching/wdf/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/teaching/wdk/</loc><lastmod>2025-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/teaching/ethics/</loc><lastmod>2024-12-31T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/teaching/mixphi/</loc><lastmod>2024-09-01T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/teaching/fu/</loc><lastmod>2023-12-31T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/categories/research/</loc><lastmod>2022-05-16T15:58:26&#43;08:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/categories/blog/</loc><lastmod>2019-06-08T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/2019-06-08-pandocscripts/</loc><lastmod>2019-06-08T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/2018-04-29-viewmodel/</loc><lastmod>2018-04-29T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/2018-04-13-angularjs-spotibar/</loc><lastmod>2018-04-13T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/2017-09-13-spotibar/</loc><lastmod>2017-09-13T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/2017-07-06-enumsql/</loc><lastmod>2017-07-06T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/posts/2017-05-17-android_courier_firebase/</loc><lastmod>2017-05-17T00:00:00&#43;00:00</lastmod></url><url>
+            <loc>https://michalwyrwa.org/tags/</loc></url></urlset>
