@@ -6,6 +6,16 @@
         <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Methods in experimental philosophy of mind 2025/2026 (lab)</title>
+    <link>https://michalwyrwa.org/posts/teaching/mixphi/</link>
+    <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://michalwyrwa.org/posts/teaching/mixphi/</guid>
+    <description><![CDATA[<h2 id="general-info">General info</h2>
+<p>The course aims to develop participants&rsquo; ability to apply empirical methods to philosophical questions. We will explore how experimental findings shape philosophical debates within the broader cognitive science framework. Since the focus will be on understanding, designing, conducting, and analyzing empirical inquiries inspired by philosophy rather than delving into philosophical nuances, students are encouraged to familiarize themselves with the suggested theoretical literature.</p>
+<p>Each class will consist of a discussion on a key paper reading, a student presentation on follow-up studies, and research exercises. In mid-to-late November, we will also have a refresher on basic statistics, so ensure you have appropriate software installed (I&rsquo;ll be using RStudio or Jamovi but you can work with whatever you are comfortable with).</p>]]></description>
+</item>
+<item>
     <title>Technologia informacyjna 2025/2026</title>
     <link>https://michalwyrwa.org/posts/teaching/ti/</link>
     <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
@@ -36,16 +46,6 @@
     <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
     <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Methods in experimental philosophy of mind 2024/2025 (lab)</title>
-    <link>https://michalwyrwa.org/posts/teaching/mixphi/</link>
-    <pubDate>Sun, 01 Sep 2024 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/mixphi/</guid>
-    <description><![CDATA[<h2 id="general-info">General info</h2>
-<p>The course aims to develop participants&rsquo; ability to apply empirical methods to philosophical questions. We will explore how experimental findings shape philosophical debates within the broader cognitive science framework. Since the focus will be on understanding, designing, conducting, and analyzing empirical inquries inspired by philosophy rather than delving into philosophical nuances, students are encouraged to familiarize themselves with the suggested theoretical literature.</p>
-<p>Each class will consist of a discussion on a key paper reading, a student presentation on follow-up studies, and research exercises. Mid-to-late November we will also have a refresher on basic statistics, so ensure you have appropriate software installed (I&rsquo;ll be using RStudio but you can work with whatever you are comfortable with).</p>]]></description>
 </item>
 <item>
     <title>Filozofia umysłu 2023/2024</title>
