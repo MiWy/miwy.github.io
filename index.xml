@@ -3,9 +3,17 @@
         <title>Michał Wyrwa</title>
         <link>https://michalwyrwa.org/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>pl-pl</language><lastBuildDate>Wed, 31 Dec 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://michalwyrwa.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Filozofia umysłu 2025/2026</title>
+    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
+    <pubDate>Wed, 31 Dec 2025 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Methods in experimental philosophy of mind 2025/2026 (lab)</title>
     <link>https://michalwyrwa.org/posts/teaching/mixphi/</link>
     <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
@@ -45,14 +53,6 @@
     <pubDate>Tue, 31 Dec 2024 00:00:00 &#43;0000</pubDate>
     <author>xxxx</author>
     <guid>https://michalwyrwa.org/posts/teaching/ethics/</guid>
-    <description><![CDATA[]]></description>
-</item>
-<item>
-    <title>Filozofia umysłu 2023/2024</title>
-    <link>https://michalwyrwa.org/posts/teaching/fu/</link>
-    <pubDate>Sun, 31 Dec 2023 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/teaching/fu/</guid>
     <description><![CDATA[]]></description>
 </item>
 <item>
