@@ -48,6 +48,14 @@
     <description><![CDATA[]]></description>
 </item>
 <item>
+    <title>Zastosowania generatywnej sztucznej inteligencji 2025/2026 (lab)</title>
+    <link>https://michalwyrwa.org/posts/teaching/lzgsi/</link>
+    <pubDate>Mon, 01 Sep 2025 00:00:00 &#43;0000</pubDate>
+    <author>xxxx</author>
+    <guid>https://michalwyrwa.org/posts/teaching/lzgsi/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Ethics of Technology, AI, and Neuroethics 2024/2025</title>
     <link>https://michalwyrwa.org/posts/teaching/ethics/</link>
     <pubDate>Tue, 31 Dec 2024 00:00:00 &#43;0000</pubDate>
@@ -88,22 +96,6 @@
 <h2 id="part-1">PART 1</h2>
 <p>Zgodnie z poprzednim wpisem, rozbierzemy SpotiBar w wersji JavaScript na czynniki pierwsze. Użyjemy AngularJS, JavaScript i API Spotify.</p>
 <p>Jako że to pierwszy kontakt z JavaScriptem jako takim i choć budowana przez nas aplikacja pewnie nie spełnia kryteriów dobrego kodu, to przynajmniej pokazuje, że mimo <a href="https://risingstars.js.org/2017/en/" target="_blank" rel="noopener noreffer ">Mnogości</a> JS-owych frameworków i możliwości, rozpoczęcie zabawy w developerkę nie jest trudne.</p>]]></description>
-</item>
-<item>
-    <title>[OLD] SpotiBar: Spotify &#43; Foobar</title>
-    <link>https://michalwyrwa.org/posts/2017-09-13-spotibar/</link>
-    <pubDate>Wed, 13 Sep 2017 00:00:00 &#43;0000</pubDate>
-    <author>xxxx</author>
-    <guid>https://michalwyrwa.org/posts/2017-09-13-spotibar/</guid>
-    <description><![CDATA[<p>[This is a post from my old website. Outdated packages and libraries. Viewer discretion is advised ;-)]</p>
-<h2 id="spotibar">SPOTIBAR</h2>
-<p>Spotify zacząłem używać od momentu jak wprowadzili abonament w PLN. Kilka lat doświadczenia się zatem zebrało i choć bardzo sobie cenię tę usługę, to jest jedna rzecz, która mi strasznie w niej przeszkadza.</p>
-<p>{: .align-center}</p>
-<p>Od razu zaznaczę, że należę do grona ludzi, którzy trzymać swoją kolekcję muzyczną w ordnungu. Jak kupuję płytę CD, to znajduję dla niej miejsce na odpowiedniej półeczce, scrobbluję do <a href="https://www.last.fm" target="_blank" rel="noopener noreffer ">last.fm</a> z iTunesa, Spotify&rsquo;a i telefonu, staram się pamiętać czy dany album mam na nośniku fizycznym, cyfrowym, w streamingu, i tak dalej.
-Zarządzanie kolekcją w Spotify kuleje. Jak tylko nasze playlisty przekroczą te kilkadziesiąt utworów, wzrokowe odnalezienie się w nich jest dla mnie niemożliwe. Jest searchbar po playliście, ale co z utworami, których nazwy nie potrafię przywołać a potrafię jedynie rozpoznać? Poza tym, jakbym chciał wszystko załatwiać klawiaturowo, to używałbym <a href="https://www.musicpd.org" target="_blank" rel="noopener noreffer ">mpd</a> + <a href="https://www.mopidy.com" target="_blank" rel="noopener noreffer ">mopidy</a> w terminalu.
-Listy mają za wysoką linię wiersza (nawet po zoom- na maksimum), nie mogę playlisty pokazać jako zbioru miniatur okładek/wykonawców, nie mogę szukać jednocześnie po wszystkich swoich playlistach/bibliotece (tylko po całej bazie utwórów), i tak dalej. Cała koncepcja biblioteki w Spotify leży i kwiczy. Gdybym miał przenieść tam bibliotekę wykonawców z last.fm, nie wiem w jaki sposób miałbym cokolwiek w niej znaleźć.
-Koniec końców moja przygoda ze Spotify wygląda tak, że nigdy wcześniej tak dużo nowej muzyki nie słuchałem, ale też nigdy wcześniej tak mało wykonawców/albumów nie zapamiętywałem. Przyjąłem więc rozwiązanie robocze: playlista jest albo pod gatunek albo pod dany temat. Przykładowo, wczesny black metal ma swoją playlistę, podobnie jak muzyka pasująca do pracy przy komputerze, czy jazdy samochodem. Mam też playlisty nieeleganckie: albumy do przesłuchania, utwory do uporządkowania i tym podobne.
-Być może taki urok czasów, presji wywoływanej samą możliwością słuchania czegokolwiek spośród X milionów dostępnych w Spotify utworów. Póki co nie potrafię tego rozstrzygnąć, ale pamiętam taki programik jak <a href="https://www.foobar2000.org" target="_blank" rel="noopener noreffer ">foobar2000</a>. Był idealny dla moich potrzeb. Prosty, konfigurowalny do cna, w którym od razu wiedziałem, gdzie i w jakim miejscu kryje się ten utwór, na który mam w danym momencie ochotę.</p>]]></description>
 </item>
 </channel>
 </rss>
